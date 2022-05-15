@@ -1,0 +1,18 @@
+<article class="module module__{{ module.nom_unique }}">
+    <a href="{{ module.link }}"
+       class="module__link {{ module.nom_unique }}__link">
+        En savoir plus sur {{ module }}
+    </a>
+    <h3 class="module__title {{ module.nom_unique }}__title">
+        {{ module }}
+    </h3>
+    <div class="wysiwyg module__excerpt {{ module.nom_unique }}__excerpt">
+        {{ function('apply_filters', 'the_content', module.preview.read_more(false)) }}
+    </div>
+    <img src="{{ module.thumbnail.src }}"
+         srcset="{{ module.thumbnail.srcset }}"
+         sizes="(max-width: 1920px) 100vw, 1920px"
+         loading="lazy"
+         alt="{{ module.thumbnail.alt }}"
+         class="module__image {{ module.nom_unique }}__image"/>
+</article>

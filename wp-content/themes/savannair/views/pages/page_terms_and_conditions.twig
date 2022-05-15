@@ -1,0 +1,61 @@
+{% extends 'base.twig' %}
+
+{% block body %}
+
+    <main class="t-a-c">
+        <h1 class="t-a-c__title">
+            {{ __('Condidtions générales', 'savannair') }}
+        </h1>
+        <section class="t-a-c__1">
+            <h2 class="t-a-c__1__title">
+                {{ __('Dispositions générales', 'savannair') }}
+            </h2>
+            <ol>
+                <li class="content">
+                    {{ __('L’acheteur est réputé avoir pris connaissance des présentes conditions générales et en avoir accepté toutes les clauses, sauf stipulation contraire expresse. En vertu du droit belge, elles priment sur celles de l’acheteur.', 'savannair') }}
+                </li>
+                <li class="content">
+                    {{ __('En cas de litige, les juridictions de Gingelom sont seules compétentes. Nous pourrons toutefois renoncer à la présente clause et citer devant une autre juridiction compétente.') }}
+                </li>
+                <li class="content">
+                    {{ __('Sauf stipulation contraire, nos offres sont valables 1 mois.', 'savannair') }}
+                </li>
+            </ol>
+        </section>
+        <section class="t-a-c__2">
+            <h2 class="t-a-c__2__title">
+                {{ __('Modalités de paiement & contestation', 'savannair') }}
+            </h2>
+            <ol>
+                <li class="content">
+                    {{ __('Nos factures sont payables au grand comptant, en notre siège social sis à Outsiplou, 11 - 1111 perlimpinpin (zutflute) ou en notre siège d‘exploitation sis Macapète, 11 à 1111 le bout du monde.', 'savannair') }}
+                </li>
+                <li class="content">
+                    {{ __('Toute réclamation relative à une de nos factures doit nous parvenir par courrier recommandé, à peine de nullité, dans les 8 jours calendrier à dater de son émission. Après cette date, la facture sera présumée acceptée par son destinataire sans renversement possible de cette présomption. Un changement d‘adresse non communiqué à Savannair ne peut valoir excuse de n‘avoir pas eu connaissance de la facture ou de ne pas l‘avoir contestée dans les délais impartis.', 'savannair') }}
+                </li>
+                <li class="content">
+                    {{ __('Nos factures sont payables à échéance ou à défaut, 10 jours à compter de leur date d‘émission.', 'savannair') }}
+                </li>
+                <li class="content">
+                    {{ __('A défaut de paiement à leur échéance, nos factures porteront de plein droit et sans mise en demeure préalable un intérêt de retard de 12% l‘an, au prorata de chaque mois entamé.
+                    En outre, le montant de la facture sera majoré d‘une indemnité forfaitaire de 10%, avec un minimum de 100,00€ à titre de clause pénale forfaitaire irréductible, sans préjudice du dommage réellement subi. De plus, le montant de nos factures pourra également être majoré de 20,00€ pour tout rappel envoyé, de 120,00€ pour le déplacement d‘une personne ainsi qu‘une indemnité forfaitaire irréductible de 60,00€ pour frais de recouvrement. Un manquement de notre part à une obligation consacrée par les présentes conditions générales sera sanctionné de la même façon en faveur du client protégé par l‘article 1, 2° du code de droit économique du 28 février 2013.', 'savannair') }}
+                </li>
+                <li class="content">
+                    {{ __('Le défaut de paiement de la facture à son échéance rend immédiatement exigibles toutes les sommes dues, nonobstant les facilités de paiements éventuellement accordées préalablement. Les dépens et éventuels frais de justice seront en outre pleinement à charge du débiteur.', 'savannair') }}
+                </li>
+            </ol>
+        </section>
+        <section class="t-a-c__3">
+            <h2 class="t-a-c__3__title">
+                {{ __('Condition particulière applicable aux clients professionnels', 'savannair') }}
+            </h2>
+            <ol>
+                <li class="content">
+                    {{ __(' En vertu de l’article 6 de la loi du 2 août 2002, le destinataire de la facture sera redevable de tous les frais de recouvrement qui subviendraient suite à un manquement de sa part à l’une des obligations dont il a la charge en vertu des présentes conditions générales.
+                    ', 'savannair') }}
+                </li>
+            </ol>
+        </section>
+    </main>
+
+{% endblock %}

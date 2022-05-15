@@ -1,0 +1,18 @@
+{
+    "require": {
+        "timber/timber": "^1.19",
+        "twig/cssinliner-extra": "^3.3"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Savannair\\Controllers\\": "controller/",
+            "Savannair\\Validators\\": "validators/",
+            "Savannair\\Validators\\Sanitizers\\": "validators/sanitizers/"
+        }
+    }
+}

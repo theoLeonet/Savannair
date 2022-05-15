@@ -1,0 +1,57 @@
+{% extends 'base.twig' %}
+
+{% block body %}
+    <main class="home">
+        <section class="home__about ">
+            <div class="wysiwyg about__introduction__text">
+                {{ about.content }}
+            </div>
+            <a href="#about__main"
+               class="about__introduction__link">
+                {{ __(site.title ~ ' intervient', 'savannair') }}
+            </a>
+            <div class="about__main" id="about__main">
+                <h3 class="about__main__title">
+                    {{ site.title }}
+                </h3>
+                <div class="wysiwyg main__text">
+                    {{ about.meta('resume') }}
+                </div>
+                <a href="{{ about.link }}"
+                   class="about__link">
+                    {{ __('En savoir plus', 'savannair') }}
+                </a>
+            </div>
+        </section>
+        <section class="home__modules" id="modules">
+            <h2 class="home__modules__title">
+                {{ __('Nos modules', 'savannair') }}
+            </h2>
+            <div class="modules__main">
+                {% for module in modules %}
+                    {% if (module.meta('nom_unique') is same as 'antilope') %}
+                        {% include '/partials/_module.twig' %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="modules__secondary">
+                {% for module in modules %}
+                    {% if(not module.meta('nom_unique') is same as 'antilope') %}
+                        {% include '/partials/_module.twig' %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </section>
+        <section class="home__blog">
+            <h2 class="home__blog__title">
+                {{ __('Notre dernier article', 'savannair') }}
+            </h2>
+            {% include '/partials/_article.twig' %}
+            <a href="{{ blog.link }}"
+               class="blog__more">
+                {{ __('Lire nos autres articles', 'savannair') }}
+            </a>
+        </section>
+    </main>
+
+{% endblock %}

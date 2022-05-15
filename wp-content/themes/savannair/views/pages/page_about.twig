@@ -1,0 +1,65 @@
+{% extends 'base.twig' %}
+
+{% block body %}
+    <main class="about">
+        <section class="about__savannair">
+            <img src="{{ post.meta('savannair_image').url }}"
+                 srcset="{{ function('savannair_create_srcset', post.meta('savannair_image')['sizes']) }}"
+                 sizes="(max-width: 1920px) 100vw, 1920px"
+                 alt="{{ post.meta('savannair_image').alt }}"
+                 class="savannair__image">
+            <h2 class="savannair__title">
+                {{ site.title }}
+            </h2>
+            <div class="wysiwyg savannair__summary">
+                {{ post.meta('resume') }}
+            </div>
+            <div class="savannair__why">
+                <h3 class="savannair__why__title">
+                    {{ __('Pourquoi ?', 'savannair') }}
+                </h3>
+                <div class="wysiwyg savannair__why__text">
+                    {{ post.meta('why') }}
+                </div>
+            </div>
+            <div class="savannair__how">
+                <h3 class="savannair__how__title">
+                    {{ __('Comment ?', 'savannair') }}
+                </h3>
+                <div class="wysiwyg savannair__how__text">
+                    {{ post.meta('how') }}
+                </div>
+            </div>
+            <div class="savannair__video">
+                {{ post.meta('video') }}
+            </div>
+        </section>
+        <section class="about__issep">
+            <h2 class="issep__t≤itle">
+                {{ __('L’ISSeP', 'savannair') }}
+            </h2>
+            <div class="wysiwyg issep__text">
+                {{ post.meta('about_issep') }}
+            </div>
+            <img src="{{ post.meta('issep_image').url }}"
+                 srcset="{{ function('savannair_create_srcset', post.meta('issep_image')['sizes']) }}"
+                 sizes="(max-width: 1920px) 100vw, 1920px"
+                 alt="{{ post.meta('issep_image').alt }}"
+                 class="issep__image">
+        </section>
+        <section class="about__electrohepl">
+            <h2 class="electrohepl__title">
+                {{ __('Le service Ingénieur en systèmes electroniques de
+la HEPL ', 'savannair') }}
+            </h2>
+            <div class="wysiwyg electrohepl__text">
+                {{ post.meta('about_electrohepl') }}
+            </div>
+            <img src="{{ post.meta('electrohepl_image').url }}"
+                 srcset="{{ function('savannair_create_srcset', post.meta('electrohepl_image')['sizes']) }}"
+                 sizes="(max-width: 1920px) 100vw, 1920px"
+                 alt="{{ post.meta('electrohepl_image').alt }}"
+                 class="electrohepl__image">
+        </section>
+    </main>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.twig' %}
+
+{% block body %}
+
+    <main class="blog">
+        {% for article in articles %}
+            {% include '/partials/_article.twig' %}
+        {% endfor %}
+    </main>
+
+
+{% endblock %}
