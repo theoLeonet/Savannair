@@ -154,3 +154,28 @@ function savannair_create_srcset($array)
     $srcset = implode(' ', $srcsetArray);
     return rtrim($srcset, ', ');
 }
+
+// Function to charge compiled assets and return their absolute path.
+function savannair_mix($path)
+{
+    $path = '/' . ltrim($path, '/');
+
+    if (!realpath(__DIR__ . '/public' . $path)) {
+        return;
+    }
+
+    if (!($manifest = realpath(__DIR__ . '/public/mix-manifest.json'))) {
+        return get_stylesheet_directory_uri() . '/public' . $path;
+    }
+
+    // Ouvrir mix-manifest.json
+    $manifest = json_decode(file_get_contents($manifest), true);
+
+    // Look if there is a key that corresponds to the file loaded in $path.
+    if (!array_key_exists($path, $manifest)) {
+        return get_stylesheet_directory_uri() . '/public' . $path;
+    }
+
+    // Get and return the versioned path.
+    return get_stylesheet_directory_uri() . '/public' . $manifest[$path];
+}

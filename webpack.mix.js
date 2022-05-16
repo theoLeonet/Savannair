@@ -11,20 +11,20 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.ts('wp-content/themes/antilope/resources/ts/Main.ts', 'js').sourceMaps()
-    .sass('wp-content/themes/antilope/resources/scss/main.scss', 'css').sourceMaps()
+mix.ts('wp-content/themes/savannair/src/ts/Main.ts', 'js').sourceMaps()
+    .sass('wp-content/themes/savannair/src/scss/main.scss', 'css').sourceMaps()
     .options({
         processCssUrls: false
     })
-    .setPublicPath('./wp-content/themes/antilope/public')
+    .setPublicPath('./wp-content/themes/savannair/public')
     .browserSync({
         proxy: 'https://savannair.test',
         notify: false,
         open: true,
         files: [
-            'wp-content/themes/antilope/*.php',
-            'wp-content/themes/antilope/resources/ts/*.ts',
-            'wp-content/themes/antilope/resources/scss/*.scss'
+            'wp-content/themes/savannair/*.php',
+            'wp-content/themes/savannair/src/ts/*.ts',
+            'wp-content/themes/savannair/src/scss/*.scss'
         ]
     })
     .version();
