@@ -1,0 +1,96 @@
+.burger-menu__input {
+  visibility: hidden;
+}
+
+.header {
+  position: sticky;
+}
+
+.header__nav {
+  background: $nav;
+  backdrop-filter: blur(20px);
+}
+
+#burger-menu__label {
+  background: url("https://savannair.test/wp-content/themes/savannair/assets/pictures/burger.svg") rgba(100, 100, 100, .4) no-repeat center;
+  backdrop-filter: blur(1.25em); // 20/16
+  border-radius: 1em;
+}
+
+.item__link {
+  font-family: "PP Neue Montreal", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  color: $white;
+}
+
+@media screen and (max-width: 800px) {
+  .header {
+    top: 0;
+    left: 0;
+    height: 0;
+  }
+
+  .header__nav {
+    transition: .3s;
+    position: absolute;
+    top: calc(-100vh + 5.1875em); // 83/16
+    right: calc(-100vw - 2em); // 32/16
+    display: grid;
+    align-content: center;
+    height: 100vh;
+    width: 100vw;
+
+    .burger-menu__close {
+      position: absolute;
+      top: 32px;
+      right: -32px;
+
+      font-family: "PP Monument Extended", sans-serif;
+      font-size: 2em;
+
+      color: $white;
+    }
+  }
+
+  .burger-menu__input:checked + #burger-menu__label .header__nav {
+    right: -2em; // 32/16
+    transition: .3s;
+
+    .burger-menu__close {
+      right: 2em; // 32/16
+    }
+  }
+
+  #burger-menu__label {
+    position: absolute;
+    top: calc(100vh - 5.1875em); // 83/16
+    right: 2em; // 32/16
+    width: 4em; // 64/16
+    aspect-ratio: 1/1;
+    display: inline-block;
+  }
+
+  .header__nav__container {
+    text-align: center;
+  }
+
+  .nav__item + .nav__item {
+    margin-top: 3em; // 48/16
+  }
+
+  .item__link {
+    font-size: 1.5em; // 24/16
+  }
+}
+
+@-moz-document url-prefix() {
+  .header__nav {
+    background: $nav--moz;
+  }
+
+  #burger-menu__label {
+    background: url("https://savannair.test/wp-content/themes/savannair/assets/pictures/burger.svg") $nav--moz no-repeat center;
+  }
+}

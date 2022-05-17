@@ -14,33 +14,39 @@
     {{ site.name }}
 </h1>
 <header class="header">
-    <nav class="header__nav nav">
-        <h2 class="main__nav__title sr-only">
-            {{ primary_menu.title }}
-        </h2>
-        <ul class="header__nav__container nav__container">
-            {% for item in primary_menu.items %}
-                <li class="nav__item item__{{ item.slug }}">
-                    <a class="item__link link__{{ item.slug }}"
-                       href="{{ item.link }}">
-                        {{ item.title }}
-                    </a>
-                    {% if item.children %}
-                        <ul class="nav__children__container">
-                            {% for child in item.children %}
-                                <li class="nav__child__item child__item__{{ child.slug }}">
-                                    <a class="nav__child__link child__link__{{ child.slug }}"
-                                       href="{{ child.link }}">
-                                        {{ child.title }}
-                                    </a>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
-                </li>
-            {% endfor %}
-        </ul>
-    </nav>
+    <input type="checkbox" id="burger-menu__input" class="burger-menu__input">
+    <label for="burger-menu__input" id="burger-menu__label">
+        <nav class="header__nav nav">
+            <h2 class="main__nav__title sr-only">
+                {{ primary_menu.title }}
+            </h2>
+            <div class="burger-menu__close">
+                <p>X</p>
+            </div>
+            <ul class="header__nav__container nav__container">
+                {% for item in primary_menu.items %}
+                    <li class="nav__item item__{{ item.slug }}">
+                        <a class="item__link link__{{ item.slug }}"
+                           href="{{ item.link }}">
+                            {{ item.title }}
+                        </a>
+                        {% if item.children %}
+                            <ul class="nav__children__container">
+                                {% for child in item.children %}
+                                    <li class="nav__child__item child__item__{{ child.slug }}">
+                                        <a class="nav__child__link child__link__{{ child.slug }}"
+                                           href="{{ child.link }}">
+                                            {{ child.title }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </label>
 </header>
 
 {% block body '' %}
