@@ -24,7 +24,9 @@ mix.ts('wp-content/themes/savannair/src/ts/Main.ts', 'js').sourceMaps()
         files: [
             'wp-content/themes/savannair/*.php',
             'wp-content/themes/savannair/src/ts/*.ts',
-            'wp-content/themes/savannair/src/scss/*.scss'
+            'wp-content/themes/savannair/public/js/*.js',
+            'wp-content/themes/savannair/src/scss/*.scss',
+            'wp-content/themes/savannair/public/css/*.css'
         ]
     })
     .version();

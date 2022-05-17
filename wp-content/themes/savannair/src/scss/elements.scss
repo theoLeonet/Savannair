@@ -1,0 +1,8 @@
+a {
+  color: $clickable;
+
+  &:hover {
+    font-style: italic;
+    border-bottom: 1px solid;
+  }
+}
