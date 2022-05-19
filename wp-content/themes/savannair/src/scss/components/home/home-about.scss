@@ -9,37 +9,106 @@
 
 .about__introduction__link {
   font-family: "PP Monument Extended", sans-serif;
-  
+
   &:after {
     content: "";
     display: inline-block;
     aspect-ratio: 1/1;
+    width: 0.875em; // 14/16
+    margin-left: 0.625em; // 10/16
 
     background: url("https://savannair.test/wp-content/themes/savannair/assets/pictures/arrow.svg") no-repeat center;
     background-size: contain;
   }
 }
 
+.about__main {
+  background-color: $sky-blue;
+}
+
+.about__main__title {
+  font-family: "PP Monument Extended", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 1.5em; // 24/16
+    aspect-ratio: 1/1;
+
+    background: url("https://savannair.test/wp-content/themes/savannair/assets/pictures/antilope.svg") center;
+    background-size: cover;
+    transform: translateY(.25em); // 4/16
+  }
+}
+
+.main__text {
+  font-family: "PP Neue Montreal", sans-serif;
+  line-height: 1.5em;
+}
+
+.about__link {
+  font-family: "PP Neue Montreal", sans-serif;
+
+  &:after {
+    content: "";
+    display: inline-block;
+    aspect-ratio: 1/1;
+    width: 0.625em; // 10/16
+    margin-left: 0.5em; // 8/16
+
+    background: url("https://savannair.test/wp-content/themes/savannair/assets/pictures/arrow.svg") no-repeat center;
+    background-size: contain;
+  }
+}
 
 @media screen and (max-width: 800px) {
   .home__about {
+    margin-top: 3em;
+  }
+
+  .home__about__introduction {
     width: 85%;
-    margin: 3em auto 0;
+    margin: 0 auto;
   }
 
   .about__introduction__text {
     font-size: 1.4375em; //23/16
-    line-height: 1.6em;
+    line-height: 1.625em; // 26/16
   }
 
   .about__introduction__link {
     display: inline-block;
     margin-top: 3em; //48/16;
     font-size: 0.875em; //14/16
-
-    &:after {
-      width: 0.875em; // 14/16
-      margin-left: 0.625em; // 10/16
-    }
   }
+
+  .about__main {
+    margin-top: 5em; // 80/16
+    padding-bottom: 2em; // 32/16
+    color: $white;
+  }
+
+  .savannair__image {
+    width: 100%;
+    aspect-ratio: 1920/1080;
+  }
+
+  .about__main__title {
+    font-size: 1.5em; // 24/16
+    margin: 1em auto 0;
+  }
+
+  .main__text {
+    margin: 1em auto; // 32/16
+    width: 85%;
+    font-size: 1.3125em; // 21/16
+  }
+
+  .about__link {
+    display: block;
+    font-size: 1.125em; // 18/16
+  }
+
 }

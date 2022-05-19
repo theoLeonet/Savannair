@@ -3,14 +3,21 @@
 {% block body %}
     <main class="home">
         <section class="home__about ">
-            <div class="wysiwyg about__introduction__text">
-                {{ about.content }}
+            <div class="home__about__introduction">
+                <div class="wysiwyg about__introduction__text">
+                    {{ about.content }}
+                </div>
+                <a href="#about__main"
+                   class="about__introduction__link">
+                    {{ __(site.title | upper ~ ' intervient', 'savannair') }}
+                </a>
             </div>
-            <a href="#about__main"
-               class="about__introduction__link">
-                {{ __(site.title | upper ~ ' intervient', 'savannair') }}
-            </a>
             <div class="about__main" id="about__main">
+                <img src="{{ about.meta('savannair_image').url }}"
+                     srcset="{{ function('savannair_create_srcset', about.meta('savannair_image')['sizes']) }}"
+                     sizes="(max-width: 1920px) 100vw, 1920px"
+                     alt="{{ about.meta('savannair_image').alt }}"
+                     class="savannair__image">
                 <h3 class="about__main__title">
                     {{ site.title }}
                 </h3>
