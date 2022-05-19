@@ -1,12 +1,12 @@
 <article class="article">
     <a href="{{ article.meta('original_article_link') }}"
        class="article__link">
-        Lire la suite de {{ article }}
+        {{ __('En savoir plus', 'savannair') }}
     </a>
     <h3 class="article__title">
         {{ article }}
     </h3>
-    <div class="wysiwyg module__excerpt {{ article.nom_unique }}__excerpt">
+    <div class="wysiwyg article__excerpt">
         {{ function('apply_filters', 'the_content', article.preview.read_more(false) ) }}
     </div>
     <img src="{{ article.thumbnail.src }}"
@@ -14,5 +14,5 @@
          sizes="(max-width: 1920px) 100vw, 1920px"
          loading="lazy"
          alt="{{ article.thumbnail.alt }}"
-         class="article__image {{ article.nom_unique }}__image"/>
+         class="article__image"/>
 </article>

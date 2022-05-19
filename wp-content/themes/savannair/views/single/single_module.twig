@@ -2,7 +2,7 @@
 
 {% block body %}
 
-    <main class="module__{{ post.nom_unique }}">
+    <main class="module module__{{ post.nom_unique }}">
         <section class="module__introduction {{ post.nom_unique }}__introduction">
             <img src="{{ post.thumbnail.src('medium') }}"
                  srcset="{{ post.thumbnail.srcset }}"

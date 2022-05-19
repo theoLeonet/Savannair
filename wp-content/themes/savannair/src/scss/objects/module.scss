@@ -1,0 +1,79 @@
+.home__modules__title {
+  font-family: "PP Monument Extended", sans-serif;
+  text-transform: uppercase;
+}
+
+.module {
+  display: grid;
+}
+
+.module__link {
+  font-family: "PP Neue Montreal", sans-serif;
+
+  &:after {
+    content: "";
+    display: inline-block;
+    aspect-ratio: 1/1;
+    width: 0.5625em; // 9/16
+    margin-left: 0.5625em; // 9/16
+
+    background: url("https://savannair.test/wp-content/themes/savannair/assets/pictures/arrow.svg") no-repeat center;
+    background-size: contain;
+  }
+}
+
+.module__title {
+  font-family: "PP Monument Extended", sans-serif;
+  text-transform: uppercase;
+}
+
+.module__excerpt {
+  font-family: "PP Neue Montreal", sans-serif;
+}
+
+
+@media screen and (max-width: 800px) {
+
+  .home__modules__title {
+    margin-top: 3rem; //48/24
+
+    font-size: 1.75rem; // 24/16
+    text-align: center;
+  }
+
+  .module {
+    width: 80vw;
+    margin: 3rem auto 0; // 48/16
+  }
+
+  .modules__secondary .module {
+    margin-top: 4rem; // 64/16
+  }
+
+  .module * {
+    width: 100%;
+  }
+
+  .module__image {
+    order: 0;
+  }
+
+  .module__title {
+    order: 1;
+    margin-top: 1.2em; // 24/20
+
+    font-size: 1.25rem; // 20/16
+  }
+
+  .module__excerpt {
+    order: 2;
+    margin-top: 1.5em; // 24/16
+
+    line-height: 1.5em;
+  }
+
+  .module__link {
+    order: 3;
+    margin-top: 1.5em; // 24/16
+  }
+}
