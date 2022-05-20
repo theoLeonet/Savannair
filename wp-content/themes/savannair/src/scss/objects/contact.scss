@@ -1,0 +1,160 @@
+.contact__banner {
+  padding: 1rem 10%;
+
+  background: $turquoise;
+}
+
+.contact__title {
+  font-family: "PP Monument Extended", sans-serif;
+  line-height: 2em; // 32/16
+
+  color: $black;
+}
+
+.contact__clickable {
+  display: block;
+
+  &:after {
+    content: '';
+    display: inline-block;
+    margin-left: .5em; // 8/16
+    width: 1.5em; // 24/16
+    aspect-ratio: 1/1;
+    transform: translateY(0.25em); // 4/16
+
+    background: url("https://savannair.test/wp-content/themes/savannair/assets/pictures/waving_hand.svg") no-repeat center;
+    background-size: cover;
+  }
+}
+
+.contact__form__title {
+  font-family: "PP Monument Extended", sans-serif;
+}
+
+.contact__form__container {
+  background: $turquoise;
+}
+
+.form__label, .user__group p {
+  font-family: "PP Neue Montreal", sans-serif;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.form__checkbox {
+  font-family: "PP Neue Montreal", sans-serif;
+  font-weight: bold;
+  line-height: 1.5em;
+}
+
+.user__group .form__field {
+  border-bottom: none;
+}
+
+.user__group .form__field [type="radio"] {
+  display: none;
+}
+
+.user__group .form__field .form__label {
+  font-weight: normal;
+  font-style: normal;
+
+  cursor: pointer;
+}
+
+.user__group .form__field [type="radio"]:checked + .form__label {
+  color: $clickable;
+  font-weight: bold;
+}
+
+.form__field {
+  border-bottom: 1px solid $placeholder;
+}
+
+.form__message__field, .form__rules__field {
+  border-bottom: none;
+}
+
+.form__button {
+  font-family: "PP Monument Extended", sans-serif;
+
+  color: $clickable;
+
+  &:hover {
+    font-style: italic;
+  }
+}
+
+
+@media screen and (max-width: 800px) {
+  .contact {
+    margin-top: 4rem; // 64/16
+  }
+
+  .contact__banner {
+    width: 100%;
+  }
+
+  .contact__form__container {
+    width: 80%;
+    padding: 10%;
+  }
+
+  .contact__form__title {
+    font-size: 1.5rem; // 24/16
+  }
+
+  .user__group {
+    display: grid;
+    grid-template: repeat(4, 1fr)/repeat(2, 1fr);
+  }
+
+  .user__group p {
+    display: block;
+    grid-row: 1/-1;
+    margin-top: 0.625em; // 10/16
+  }
+
+  .user__group .form__field {
+    display: block;
+    margin: 0.625em 0; // 10/16
+  }
+
+  .form__field {
+    display: grid;
+    margin-top: 4rem; // 48/16
+  }
+
+  .form__input {
+    margin: 1.4285714286em 0 0.7142857143em; // 20/14 10/14
+
+    font-size: 0.875em; // 14/16
+  }
+
+  .form__message {
+    border: 1px solid $placeholder;
+    padding: 0.625em; // 10/16
+  }
+
+  .form__checkbox {
+    & input {
+      font-size: 1rem;
+      width: 1em;
+      height: 1em;
+    }
+  }
+
+  .form__rules__field {
+    margin-top: 1.5em; // 24/16
+  }
+
+  .form__actions {
+    text-align: right;
+  }
+
+  .form__button {
+    margin-top: 2.4em; // 48/20
+
+    font-size: 1.25rem; // 20/16
+  }
+}

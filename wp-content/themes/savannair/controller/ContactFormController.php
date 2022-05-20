@@ -52,9 +52,9 @@ class ContactFormController extends BaseFormController
 
     protected function handle()
     {
-        if ($_SESSION['contact_form_feedback']['user-group'] === 'Un(e) scientifique') $recipient = 'theoleonet.dev@gmail.com';
-        else if ($_SESSION['contact_form_feedback']['user-group'] === 'Une ville') $recipient = 'theoleonet.dev@gmail.com';
-        else if ($_SESSION['contact_form_feedback']['user-group'] === 'Un(e) étudiant(e)') $recipient = 'theoleonet.dev@gmail.com';
+        if ($this->data['user-group'] === 'Un(e) scientifique') $recipient = 'theoleonet.dev@gmail.com';
+        else if ($this->data['user-group'] === 'Une ville') $recipient = 'theoleonet.dev@gmail.com';
+        else if ($this->data['user-group'] === 'Un(e) étudiant(e)') $recipient = 'theoleonet.dev@gmail.com';
         else $recipient = 'theoleonet.dev@gmail.com';
         // Envoyer l'email à l'admin
         wp_mail($recipient, 'Nouveau message !', $this->data['message']);

@@ -13,3 +13,11 @@ a {
     font-style: italic;
   }
 }
+
+input[type='text']::placeholder, input[type='email']::placeholder, textarea::placeholder {
+  color: $placeholder;
+}
+
+textarea {
+  outline: none;
+}
