@@ -27,7 +27,7 @@
             <h3 class="module__measured__title {{ post.nom_unique }}__measured__title">
                 {{ __('Polluants mesurés', 'savannair') }}
             </h3>
-            <div class="wysiwyg module____measured__text {{ post.nom_unique }}__measured__text">
+            <div class="wysiwyg module__measured__text {{ post.nom_unique }}__measured__text">
                 {{ post.meta('measured') }}
             </div>
             <h3 class="module__developing__title {{ post.nom_unique }}__developing__title">
@@ -40,7 +40,7 @@
         <section class="modules__links">
             {% for module in modules %}
                 <a href="{{ module.link }}"
-                   class="module__link {{ module.nom__unique }}__link">
+                   class="modules__link {{ module.nom_unique }}__link">
                     {{ __('Voir','savannair') }} {{ module.title }}
                 </a>
             {% endfor %}
