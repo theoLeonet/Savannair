@@ -1,0 +1,13 @@
+.blog__title {
+  font-family: "PP Monument Extended";
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  .blog__title {
+    margin-top: 1.5em; // 48/32
+
+    font-size: 2rem; // 32/16
+    text-align: center;
+  }
+}
