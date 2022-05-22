@@ -1,0 +1,79 @@
+.savannair__title, .savannair__summary {
+  background: $sky-blue;
+  color: $white;
+}
+
+.savannair__title {
+  font-family: "PP Monument Extended", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 1.5em; // 24/16
+    aspect-ratio: 1/1;
+
+    background: url("https://savannair.test/wp-content/themes/savannair/assets/pictures/antilope_logo_white.svg") center;
+    background-size: cover;
+    transform: translateY(.25em); // 4/16
+  }
+}
+
+.savannair__summary, .savannair__why__text, .savannair__how__text {
+  font-family: "PP Neue Montreal", sans-serif;
+  line-height: 1.5em; // 24/16
+}
+
+.savannair__why__title, .savannair__how__title {
+  font-family: "PP Monument Extended", sans-serif;
+  text-transform: uppercase;
+}
+
+
+@media screen and (max-width: 600px) {
+  .savannair__image {
+    margin-bottom: -3px;
+  }
+
+  .savannair__summary, .savannair__how, .savannair__why {
+    width: 80%;
+    padding: 0 10%;
+  }
+
+  .savannair__title {
+    padding-top: 1em;
+    padding-bottom: 1em;
+
+    font-size: 2rem; // 24/16
+  }
+
+  .savannair__why__title, .savannair__how__title {
+    padding-bottom: 1.5em; // 36/24
+
+    font-size: 1.5em; // 24/16
+  }
+
+  .savannair__summary {
+    font-size: 1.5rem; //24/16
+    padding-bottom: 3em; // 48/16
+  }
+
+  .savannair__how, .savannair__why {
+    margin-top: 4em; //64/16
+  }
+
+  .savannair__how__text, .savannair__why__text {
+    font-size: 1.5rem; // 24/16
+  }
+
+  .savannair__how {
+    margin-bottom: 3em; //48/16
+  }
+
+  .savannair__video iframe {
+    width: 100vw;
+    height: calc(100vw * (1080 / 1920));
+    margin-bottom: -3px;
+  }
+}

@@ -24,6 +24,7 @@
 
 .about__main {
   background-color: $sky-blue;
+  color: $white;
 }
 
 .about__main__title {
@@ -37,7 +38,7 @@
     width: 1.5em; // 24/16
     aspect-ratio: 1/1;
 
-    background: url("https://savannair.test/wp-content/themes/savannair/assets/pictures/antilope.svg") center;
+    background: url("https://savannair.test/wp-content/themes/savannair/assets/pictures/antilope_logo_white.svg") center;
     background-size: cover;
     transform: translateY(.25em); // 4/16
   }
@@ -63,7 +64,7 @@
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
   .home__about {
     margin-top: 3em;
   }
@@ -87,7 +88,6 @@
   .about__main {
     margin-top: 5em; // 80/16
     padding-bottom: 2em; // 32/16
-    color: $white;
   }
 
   .savannair__image {

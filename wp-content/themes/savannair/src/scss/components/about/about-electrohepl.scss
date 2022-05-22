@@ -1,0 +1,38 @@
+.about__electrohepl {
+  background: $sky-blue;
+  color: $white;
+}
+
+.electrohepl__title {
+  font-family: "PP Monument Extended";
+}
+
+.electrohepl__text {
+  font-family: "PP Neue Montreal";
+  line-height: 1.5em; // 24/16
+}
+
+@media screen {
+
+  .electrohepl__title {
+    width: 80%;
+    padding: 3em 10% 1.125em; // 128/32 36/32
+
+    font-size: 1.5rem; // 24/16
+    line-height: 1.5em;
+  }
+
+  .electrohepl__text {
+    width: 80%;
+    margin: 0 10%;
+    padding-bottom: 3em;
+
+    font-size: 1.5rem; // 24/16
+  }
+
+  .electrohepl__image {
+    width: 100vw;
+    aspect-ratio: 1920/1080;
+    margin-bottom: -3px;
+  }
+}

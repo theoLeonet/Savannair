@@ -1,0 +1,36 @@
+.about__issep {
+  background: $turquoise;
+}
+
+.issep__title {
+  font-family: "PP Monument Extended";
+}
+
+.issep__text {
+  font-family: "PP Neue Montreal";
+  line-height: 1.5em; // 24/16
+}
+
+@media screen {
+
+  .issep__title {
+    width: 80%;
+    padding: 2em 10% 1.125em; // 64/32 36/32
+
+    font-size: 2rem; // 32/16
+  }
+
+  .issep__text {
+    width: 80%;
+    margin: 0 10%;
+    padding-bottom: 3em;
+
+    font-size: 1.5rem; // 24/16
+  }
+
+  .issep__image {
+    width: 100vw;
+    aspect-ratio: 1920/1080;
+    margin-bottom: -3px;
+  }
+}
