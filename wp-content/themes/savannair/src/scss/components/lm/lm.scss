@@ -1,0 +1,30 @@
+.legal__title, .legal__1__title, .legal__2__title {
+  font-family: "PP Monument Extended", sans-serif;
+}
+
+.legal__1__content, .legal__2__content {
+  font-family: "PP Neue Montreal", sans-serif;
+  line-height: 1.5em; // 24/16
+}
+
+@media screen and (max-width: 600px) {
+
+  .legal {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .legal__title {
+    margin-top: 2.6666666667em; // 64/24
+
+    font-size: 1.5em;
+  }
+
+  .legal__1__title, .legal__2__title {
+    margin-top: 4em; // 64/16
+  }
+
+  .legal__1__content, .legal__2__content {
+    margin-top: 1.5em; // 24/16
+  }
+}

@@ -1,0 +1,30 @@
+.t-a-c__title, .t-a-c__1__title, .t-a-c__2__title, .t-a-c__3__title {
+  font-family: "PP Monument Extended", sans-serif;
+}
+
+.content {
+  font-family: "PP Neue Montreal", sans-serif;
+  line-height: 1.5em; // 24/16
+}
+
+@media screen and (max-width: 600px) {
+
+  .t-a-c {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .t-a-c__title {
+    margin-top: 2.6666666667em; // 64/24
+
+    font-size: 1.5rem;
+  }
+
+  .t-a-c__1__title, .t-a-c__2__title, .t-a-c__3__title {
+    margin-top: 4em; // 64/16
+  }
+
+  .content {
+    margin-top: 1.5em; // 24/16
+  }
+}
