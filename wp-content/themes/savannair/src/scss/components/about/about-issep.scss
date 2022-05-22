@@ -11,7 +11,7 @@
   line-height: 1.5em; // 24/16
 }
 
-@media screen {
+@media screen and (max-width: 600px) {
 
   .issep__title {
     width: 80%;

@@ -12,7 +12,7 @@
   line-height: 1.5em; // 24/16
 }
 
-@media screen {
+@media screen and (max-width: 600px) {
 
   .electrohepl__title {
     width: 80%;
