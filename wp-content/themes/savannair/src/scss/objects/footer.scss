@@ -1,0 +1,101 @@
+.footer {
+  .nav__item:nth-last-of-type(-n + 3) {
+    display: inline-block;
+    overflow: hidden;
+  }
+
+
+  .nav__item:nth-last-of-type(-n + 3) a {
+    display: inline-block;
+    aspect-ratio: 1/1;
+
+    color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.footer__title {
+  width: max-content;
+
+  font-family: "PP Monument Extended", sans-serif;
+  text-transform: uppercase;
+
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 1.5em; // 24/16
+    aspect-ratio: 1/1;
+
+    background: url("https://savannair.test/wp-content/themes/savannair/assets/pictures/antilope_logo_black.svg") center;
+    background-size: cover;
+    transform: translateY(.25em); // 4/16
+  }
+}
+
+.footer .nav__item {
+  font-family: "PP Neue Montreal", sans-serif;
+}
+
+.link__developer-link {
+  font-size: 0;
+
+  &:after {
+    width: max-content;
+    content: 'Made with' url("https://savannair.test/wp-content/themes/savannair/assets/pictures/burning_heart.svg") 'by Théo Léonet';
+  }
+}
+
+.link__ingenieurs-hepl {
+  background: url("https://savannair.test/wp-content/themes/savannair/assets/pictures/logo_electronique_systemes_embarques_b-w.png");
+}
+
+.link__hepl {
+  background: url("https://savannair.test/wp-content/themes/savannair/assets/pictures/logo_hepl_b-w.png");
+}
+
+.link__issep {
+  background: url("https://savannair.test/wp-content/themes/savannair/assets/pictures/logo_issep_b-w.png");
+}
+
+.copyright {
+  font-family: "PP Neue Montreal", sans-serif;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .footer {
+    .nav__item:nth-last-of-type(-n + 2) {
+      margin-left: calc((100% - 12.5rem) / 2); // 200/16
+    }
+
+    .nav__item:nth-last-of-type(-n + 3) a {
+      width: 4rem; // 64/16
+    }
+  }
+
+  .footer__title {
+    margin: 2em auto; // 48/24
+
+    font-size: 1.5em; // 24/16
+  }
+
+  .footer__nav {
+    width: 80%;
+    margin: 0 auto;
+
+    & .nav__item {
+      margin-top: 3em; // 48/16
+    }
+  }
+
+
+  .link__developer-link:after {
+    font-size: initial;
+  }
+
+  .copyright {
+    margin: 3em 0 7em; // 48/16 112/16
+  }
+}

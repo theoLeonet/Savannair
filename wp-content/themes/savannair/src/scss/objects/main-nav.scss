@@ -5,6 +5,14 @@
 .header {
   position: sticky;
   z-index: 10;
+
+  .item__link {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    color: $white;
+  }
 }
 
 .header__nav {
@@ -18,19 +26,20 @@
   border-radius: 1em;
 }
 
-.item__link {
-  font-family: "PP Neue Montreal", sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
 
-  color: $white;
-}
-
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
   .header {
     top: 0;
     left: 0;
     height: 0;
+
+    .nav__item + .nav__item {
+      margin-top: 3em; // 48/16
+    }
+
+    .item__link {
+      font-size: 1.5em; // 24/16
+    }
   }
 
   .header__nav {
@@ -77,13 +86,7 @@
     text-align: center;
   }
 
-  .nav__item + .nav__item {
-    margin-top: 3em; // 48/16
-  }
 
-  .item__link {
-    font-size: 1.5em; // 24/16
-  }
 }
 
 @-moz-document url-prefix() {
