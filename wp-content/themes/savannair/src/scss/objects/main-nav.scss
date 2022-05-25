@@ -1,12 +1,55 @@
-.burger-menu__input {
-  visibility: hidden;
-}
+// ----- MAIN STYLE ----- //
 
 .header {
   position: sticky;
-  z-index: 10;
+  z-index: 10; // So it stays on top of everything else
+  top: 0;
+  left: 0;
+  height: 0;
+}
+
+.burger-menu__input {
+  display: none;
+}
+
+#burger-menu__label {
+  display: inline-block;
+  position: absolute;
+  bottom: -98vh;
+  right: 2vh; // 32/16
+  width: 4em; // 64/16
+  aspect-ratio: 1/1;
+
+  background: url("https://savannair.test/wp-content/themes/savannair/assets/pictures/burger.svg") rgba(100, 100, 100, .4) no-repeat center;
+  backdrop-filter: blur(1.25em); // 20/16
+  border-radius: 1em;
+}
+
+.header__nav {
+  display: grid;
+  align-content: center;
+  position: absolute;
+  bottom: -2vh;
+  right: calc(-100vw - 2vh);
+  height: 100vh;
+  width: 100vw;
+
+  text-align: center;
+
+  background: $nav;
+  backdrop-filter: blur(20px);
+  transition: 300ms;
+
+  .burger-menu__close {
+    visibility: hidden;
+  }
+
+  .nav__item + .nav__item {
+    margin-top: 7vh; // Using vh so it stays inside any screen (tested up to 320px height).
+  }
 
   .item__link {
+    font-size: 1.5rem; // 24/16
     font-family: "PP Neue Montreal", sans-serif;
     font-weight: bold;
     text-transform: uppercase;
@@ -15,86 +58,102 @@
   }
 }
 
-.header__nav {
-  background: $nav;
-  backdrop-filter: blur(20px);
-}
+.burger-menu__input:checked + #burger-menu__label .header__nav {
+  right: -2vh; // 32/16
 
-#burger-menu__label {
-  background: url("https://savannair.test/wp-content/themes/savannair/assets/pictures/burger.svg") rgba(100, 100, 100, .4) no-repeat center;
-  backdrop-filter: blur(1.25em); // 20/16
-  border-radius: 1em;
-}
+  transition: .3s;
 
-
-@media screen and (max-width: 600px) {
-  .header {
-    top: 0;
-    left: 0;
-    height: 0;
-
-    .nav__item + .nav__item {
-      margin-top: 3em; // 48/16
-    }
-
-    .item__link {
-      font-size: 1.5em; // 24/16
-    }
-  }
-
-  .header__nav {
-    transition: .3s;
+  .burger-menu__close {
     position: absolute;
-    top: calc(-100vh + 5.1875em); // 83/16
-    right: calc(-100vw - 2em); // 32/16
-    display: grid;
-    align-content: center;
-    height: 100vh;
-    width: 100vw;
+    top: 2vh;
+    right: 2vh;
+    width: 1em; // 32/16
 
-    .burger-menu__close {
-      position: absolute;
-      top: 32px;
-      right: -32px;
+    font-family: "PP Monument Extended", sans-serif;
+    font-size: 2rem; // 32/16
 
-      font-family: "PP Monument Extended", sans-serif;
-      font-size: 2em;
-
-      color: $white;
-    }
+    visibility: initial;
+    color: $white;
   }
+}
 
-  .burger-menu__input:checked + #burger-menu__label .header__nav {
-    right: -2em; // 32/16
-    transition: .3s;
 
-    .burger-menu__close {
-      right: 2em; // 32/16
-    }
-  }
+// ----- LARGER SCREENS STYLE ----- //
+
+@media (min-width: 700px) {
 
   #burger-menu__label {
-    position: absolute;
-    top: calc(100vh - 5.1875em); // 83/16
-    right: 2em; // 32/16
-    width: 4em; // 64/16
-    aspect-ratio: 1/1;
-    display: inline-block;
+    top: 95vh;
+    left: 0;
+    width: 0;
+    height: 0;
   }
 
   .header__nav__container {
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 1em;
   }
 
-
-}
-
-@-moz-document url-prefix() {
-  .header__nav {
-    background: $nav--moz;
+  .burger-menu__close {
+    display: none;
   }
 
-  #burger-menu__label {
-    background: url("https://savannair.test/wp-content/themes/savannair/assets/pictures/burger.svg") $nav--moz no-repeat center;
+  .header__nav, .burger-menu__input:checked + #burger-menu__label .header__nav {
+    position: absolute;
+    left: 0;
+    right: calc(-100vw - 2vh);
+    width: clamp(600px, 80vw, 800px);
+    height: 2em; // 32/16
+    margin: 0 auto;
+    padding: 1em;
+    transition: 0s;
+
+    border-radius: 2em; // 32/16
+
+    .nav__item {
+      display: grid;
+      align-items: center;
+      height: 2em; // 32/16
+    }
+
+    .nav__item + .nav__item {
+      margin: 0;
+    }
+
+    .item__link {
+      font-size: 1rem;
+    }
+
+    .item__accueil-2, .item__facebook, .item__instagram {
+      overflow: hidden;
+
+      .item__link {
+        color: transparent;
+      }
+    }
+
+    .item__accueil-2 {
+      width: 2em; // 32/16
+
+      background: url("https://savannair.test/wp-content/themes/savannair/assets/pictures/antilope_logo_white.svg") no-repeat center;
+      background-size: 2em 2em;
+    }
+
+    .item__instagram {
+      width: 1em;
+
+      background: url("https://savannair.test/wp-content/themes/savannair/assets/pictures/logo_instagram.svg") no-repeat center;
+      background-size: 1em 1em;
+
+    }
+
+    .item__facebook {
+      width: 1em;
+
+      background: url("https://savannair.test/wp-content/themes/savannair/assets/pictures/logo_facebook.svg") no-repeat center;
+      background-size: 1em 1em;
+    }
   }
+
 }
