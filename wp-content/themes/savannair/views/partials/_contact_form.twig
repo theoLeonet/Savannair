@@ -2,62 +2,69 @@
     <div class="contact__banner">
         <h2 class="contact__title">
             {{ __('Interessé ?', 'savannair') }}
-            <a href="#contact" class="contact__clickable">
+            <a href="#contact__form__container" class="contact__clickable">
                 {{ __('Contactez-nous !', 'savannair') }}
             </a>
         </h2>
     </div>
     {% if( session.contact_form_feedback is not defined or not session.contact_form_feedback.success ) %}
-        <div class="contact__form__container">
+        <div id="contact__form__container">
+            <h3 class="contact__form__title">
+                {{ __('Contact', 'savannair') }}
+                <a href="#" class="close__form">
+                    X
+                </a>
+            </h3>
             <form action="{{ function('admin_url', 'admin-post.php') | e('esc_url') }}"
                   method="post"
                   class="contact__form form">
                 <div class="user__group">
                     <p>{{ __('Vous êtes', 'savannair') }} </p>
-                    <div class="form__field">
+                    <div class="form__fields">
+                        <div class="form__field">
+                            <input type="radio"
+                                   name="user-group"
+                                   value="Un(e) scientifique"
+                                   id="scientist"
+                                   checked>
+                            <label for="scientist"
+                                   class="form__label">
+                                {{ __('Un(e) scientifique', 'savannair') }}
+                            </label>
+                        </div>
+                        <div class="form__field">
 
-                        <input type="radio"
-                               name="user-group"
-                               value="Un(e) scientifique"
-                               id="scientist"
-                               checked>
-                        <label for="scientist"
-                               class="form__label">
-                            {{ __('Un(e) scientifique', 'savannair') }}
-                        </label>
-                    </div>
-                    <div class="form__field">
+                            <input type="radio"
+                                   name="user-group"
+                                   value="Une ville"
+                                   id="city">
+                            <label for="city"
+                                   class="form__label">
+                                {{ __('Une ville', 'savannair') }}
+                            </label>
+                        </div>
+                        <div class="form__field">
 
-                        <input type="radio"
-                               name="user-group"
-                               value="Une ville"
-                               id="city">
-                        <label for="city"
-                               class="form__label">
-                            {{ __('Une ville', 'savannair') }}
-                        </label>
-                    </div>
-                    <div class="form__field">
+                            <input type="radio"
+                                   name="user-group"
+                                   value="Un(e) étudiant(e)"
+                                   id="student">
+                            <label for="student"
+                                   class="form__label">
+                                {{ __('Un(e) étudiant(e)', 'savannair') }}
+                            </label>
+                        </div>
+                        <div class="form__field">
 
-                        <input type="radio"
-                               name="user-group"
-                               value="Un(e) étudiant(e)"
-                               id="student">
-                        <label for="student"
-                               class="form__label">
-                            {{ __('Un(e) étudiant(e)', 'savannair') }}
-                        </label>
-                    </div>
-                    <div class="form__field">
-
-                        <input type="radio"
-                               name="user-group"
-                               value="Autre chose"
-                               id="other">
-                        <label for="other"
-                               class="form__label">
-                            {{ __('Autre chose', 'savannair') }}
-                        </label>
+                            <input type="radio"
+                                   name="user-group"
+                                   value="Autre chose"
+                                   id="other">
+                            <label for="other"
+                                   class="form__label">
+                                {{ __('Autre chose', 'savannair') }}
+                            </label>
+                        </div>
                     </div>
                 </div>
                 <div class="form__field">
@@ -127,6 +134,9 @@
                     <button class="form__button" type="submit">Envoyer</button>
                 </div>
             </form>
+        </div>
+        <div class="contact__background">
+            <a href="#"></a>
         </div>
     {% else %}
         <div class="contact__form__success">
