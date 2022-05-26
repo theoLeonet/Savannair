@@ -53,39 +53,41 @@
 
 <footer class="footer">
     {% include '/partials/_contact_form.twig' %}
-    <h2 class="footer__title">
-        {{ site.title }}
-    </h2>
-    <nav class="footer__nav nav">
-        <h3 class="footer__nav__title sr-only">
-            {{ footer_menu.title }}
-        </h3>
-        <ul class="footer__nav__container nav__container">
-            {% for item in footer_menu.items %}
-                <li class="nav__item item__{{ item.slug }}">
-                    <a class="item__link link__{{ item.slug }}"
-                       href="{{ item.link }}">
-                        {{ item.title }}
-                    </a>
-                    {% if item.children %}
-                        <ul class="nav__children__container">
-                            {% for child in item.children %}
-                                <li class="nav__child__item child__item__{{ child.slug }}">
-                                    <a class="nav__child__link child__link__{{ child.slug }}"
-                                       href="{{ child.link }}">
-                                        {{ child.title }}
-                                    </a>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
-                </li>
-            {% endfor %}
-        </ul>
-    </nav>
-    <p class="copyright">
-        {{ __('©2022 Savannair. All Rights Reserved.', 'savannair') }}
-    </p>
+    <div class="footer__main">
+        <h2 class="footer__title">
+            {{ site.title }}
+        </h2>
+        <nav class="footer__nav nav">
+            <h3 class="footer__nav__title sr-only">
+                {{ footer_menu.title }}
+            </h3>
+            <ul class="footer__nav__container nav__container">
+                {% for item in footer_menu.items %}
+                    <li class="nav__item item__{{ item.slug }}">
+                        <a class="item__link link__{{ item.slug }}"
+                           href="{{ item.link }}">
+                            {{ item.title }}
+                        </a>
+                        {% if item.children %}
+                            <ul class="nav__children__container">
+                                {% for child in item.children %}
+                                    <li class="nav__child__item child__item__{{ child.slug }}">
+                                        <a class="nav__child__link child__link__{{ child.slug }}"
+                                           href="{{ child.link }}">
+                                            {{ child.title }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </nav>
+        <p class="copyright">
+            {{ __('©2022 Savannair. All Rights Reserved.', 'savannair') }}
+        </p>
+    </div>
 </footer>
 </body>
 {# {{ function('wp_footer') }} #}

@@ -1,24 +1,8 @@
-.footer {
-  .nav__item:nth-last-of-type(-n + 3) {
-    display: inline-block;
-    overflow: hidden;
-  }
-
-
-  .nav__item:nth-last-of-type(-n + 3) a {
-    display: inline-block;
-    aspect-ratio: 1/1;
-
-    color: transparent;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-}
-
 .footer__title {
   width: max-content;
+  margin: 2em auto; // 48/24
 
+  font-size: clamp(16px, 3.33vw, 48px);
   font-family: "PP Monument Extended", sans-serif;
   text-transform: uppercase;
 
@@ -34,17 +18,42 @@
   }
 }
 
-.footer .nav__item {
-  font-family: "PP Neue Montreal", sans-serif;
+.footer__nav {
+  width: min(80%, 800px);
+  margin: 0 auto;
+
+  text-align: center;
+
+  .nav__item {
+    margin-top: 3em; // 48/16
+
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: clamp(16px, 1.25vw, 24px);
+  }
 }
 
-.link__developer-link {
-  font-size: 0;
+.item__hepl, .item__issep {
+  margin-left: calc((100% - 12.5rem) / 3); // 200/16
+}
 
-  &:after {
-    width: max-content;
-    content: 'Made with' url("https://savannair.test/wp-content/themes/savannair/assets/pictures/burning_heart.svg") 'by Théo Léonet';
+.item__hepl, .item__issep, .item__ingenieurs-hepl {
+  display: inline-block;
+  overflow: hidden;
+
+  .item__link {
+    display: inline-block;
+    aspect-ratio: 1/1;
+    width: clamp(64px, 8vw, 128px); // 64/16
+
+    color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
   }
+}
+
+.link__developer-link img {
+  width: 1em;
 }
 
 .link__ingenieurs-hepl {
@@ -60,42 +69,58 @@
 }
 
 .copyright {
+  margin: 3em 0 7em; // 48/16 112/16
+
   font-family: "PP Neue Montreal", sans-serif;
   text-align: center;
 }
 
-@media screen and (max-width: 600px) {
-  .footer {
-    .nav__item:nth-last-of-type(-n + 2) {
-      margin-left: calc((100% - 12.5rem) / 2); // 200/16
-    }
 
-    .nav__item:nth-last-of-type(-n + 3) a {
-      width: 4rem; // 64/16
-    }
+//----- Large Screens -----//
+@media screen and (min-width: 600px) {
+  .footer__title {
+    position: absolute;
+    margin: calc(clamp(16px, 1.25vw, 24px) * 3 - clamp(16px, 3.33vw, 48px)) 0 0 10%;
   }
 
-  .footer__title {
-    margin: 2em auto; // 48/24
-
-    font-size: 1.5em; // 24/16
+  .footer__main {
+    display: grid;
   }
 
   .footer__nav {
     width: 80%;
-    margin: 0 auto;
+  }
 
-    & .nav__item {
-      margin-top: 3em; // 48/16
+  .footer__nav__container {
+    display: grid;
+    grid-template: repeat(3, 1fr)/repeat(2, 1fr);
+
+    .nav__item {
+      text-align: left;
     }
-  }
 
+    .item__ingenieurs-hepl {
+      margin-left: 0;
+    }
 
-  .link__developer-link:after {
-    font-size: initial;
-  }
+    .item__issep {
+      margin-left: calc(20vw - 64px);
+    }
 
-  .copyright {
-    margin: 3em 0 7em; // 48/16 112/16
+    .item__hepl {
+      margin-left: calc(40vw - 128px);
+    }
+
+    .item__hepl, .item__issep, .item__ingenieurs-hepl {
+      margin-top: 0;
+      grid-column: 1/2;
+      grid-row: 3/-1;
+    }
+
+    .item__conditions-generales, .item__mentions-legales, .item__developer-link {
+      grid-column: 2/-1;
+      justify-self: end;
+      align-self: end;
+    }
   }
 }
