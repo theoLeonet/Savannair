@@ -20,7 +20,7 @@
   width: 4em; // 64/16
   aspect-ratio: 1/1;
 
-  background: url("https://savannair.test/wp-content/themes/savannair/assets/pictures/burger.svg") rgba(100, 100, 100, .4) no-repeat center;
+  background: url("https://savannair.test/wp-content/themes/savannair/assets/pictures/burger.svg") $nav no-repeat center;
   backdrop-filter: blur(1.25em); // 20/16
   border-radius: 1em;
 }
@@ -155,5 +155,10 @@
       background-size: 1em 1em;
     }
   }
+}
 
+@-moz-document url-prefix() {
+  #burger-menu__label, .header__nav {
+    background-color: $nav--moz;
+  }
 }
