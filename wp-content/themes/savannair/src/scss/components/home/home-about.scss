@@ -22,18 +22,7 @@
 
 
   font-family: "PP Monument Extended", sans-serif;
-  font-size: clamp(12px, 2.9166666667vw, 56px);
-
-  &:after {
-    content: "";
-    display: inline-block;
-    aspect-ratio: 1/1;
-    width: 0.75em; // 9/12
-    margin-left: 0.75em; // 9/12
-
-    background: url("https://savannair.test/wp-content/themes/savannair/assets/pictures/arrow.svg") no-repeat center;
-    background-size: contain;
-  }
+  font-size: clamp(12px, 2.0833333333vw, 40px);
 }
 
 
