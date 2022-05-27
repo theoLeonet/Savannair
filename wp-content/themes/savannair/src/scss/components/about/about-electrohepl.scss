@@ -4,35 +4,38 @@
 }
 
 .electrohepl__title {
+  width: 80%;
+  padding: 2em 10% 1.125em; // 64/32 36/32
+
+  font-size: clamp(16px, 3.33vw, 48px);
   font-family: "PP Monument Extended", sans-serif;
 }
 
 .electrohepl__text {
+  width: 80%;
+  margin: 0 10%;
+  padding-bottom: 3em;
+
+  font-size: clamp(16px, 1.25vw, 24px);
   font-family: "PP Neue Montreal", sans-serif;
   line-height: 1.5em; // 24/16
 }
 
-@media screen and (max-width: 600px) {
+.electrohepl__image {
+  width: 100%;
+  aspect-ratio: 1920/1080;
+  margin-bottom: -3px;
+}
 
-  .electrohepl__title {
-    width: 80%;
-    padding: 3em 10% 1.125em; // 128/32 36/32
+@media screen and (min-width: 600px) {
+  .about__electrohepl {
+    display: grid;
+    grid-template:  repeat(3, max-content) / 33vw 67vw;
 
-    font-size: 1.5rem; // 24/16
-    line-height: 1.5em;
-  }
-
-  .electrohepl__text {
-    width: 80%;
-    margin: 0 10%;
-    padding-bottom: 3em;
-
-    font-size: 1.5rem; // 24/16
-  }
-
-  .electrohepl__image {
-    width: 100vw;
-    aspect-ratio: 1920/1080;
-    margin-bottom: -3px;
+    .electrohepl__image {
+      grid-column: 1/2;
+      grid-row: 1/-1;
+      height: 100%;
+    }
   }
 }

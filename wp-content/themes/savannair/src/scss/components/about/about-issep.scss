@@ -3,34 +3,38 @@
 }
 
 .issep__title {
+  width: 80%;
+  padding: 2em 10% 1.125em; // 64/32 36/32
+
+  font-size: clamp(16px, 3.33vw, 48px);
   font-family: "PP Monument Extended", sans-serif;
 }
 
 .issep__text {
+  width: 80%;
+  margin: 0 10%;
+  padding-bottom: 3em;
+
+  font-size: clamp(16px, 1.25vw, 24px);
   font-family: "PP Neue Montreal", sans-serif;
   line-height: 1.5em; // 24/16
 }
 
-@media screen and (max-width: 600px) {
+.issep__image {
+  width: 100%;
+  aspect-ratio: 1920/1080;
+  margin-bottom: -3px;
+}
 
-  .issep__title {
-    width: 80%;
-    padding: 2em 10% 1.125em; // 64/32 36/32
+@media screen and (min-width: 600px) {
+  .about__issep {
+    display: grid;
+    grid-template:  repeat(3, max-content) / 67vw 33vw;
 
-    font-size: 2rem; // 32/16
-  }
-
-  .issep__text {
-    width: 80%;
-    margin: 0 10%;
-    padding-bottom: 3em;
-
-    font-size: 1.5rem; // 24/16
-  }
-
-  .issep__image {
-    width: 100vw;
-    aspect-ratio: 1920/1080;
-    margin-bottom: -3px;
+    .issep__image {
+      grid-column: 2/-1;
+      grid-row: 1/-1;
+      height: 100%;
+    }
   }
 }

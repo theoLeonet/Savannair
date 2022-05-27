@@ -3,16 +3,18 @@
 {% block body %}
     <main class="about">
         <section class="about__savannair">
-            <img src="{{ post.meta('savannair_image').url }}"
-                 srcset="{{ function('savannair_create_srcset', post.meta('savannair_image')['sizes']) }}"
-                 sizes="(max-width: 1920px) 100vw, 1920px"
-                 alt="{{ post.meta('savannair_image').alt }}"
-                 class="savannair__image">
-            <h2 class="savannair__title">
-                {{ site.title }}
-            </h2>
-            <div class="wysiwyg savannair__summary">
-                {{ post.meta('resume') }}
+            <div class="about__savannair__introduction">
+                <img src="{{ post.meta('savannair_image').url }}"
+                     srcset="{{ function('savannair_create_srcset', post.meta('savannair_image')['sizes']) }}"
+                     sizes="(max-width: 1920px) 100vw, 1920px"
+                     alt="{{ post.meta('savannair_image').alt }}"
+                     class="savannair__image">
+                <h2 class="savannair__title">
+                    {{ site.title }}
+                </h2>
+                <div class="wysiwyg savannair__summary">
+                    {{ post.meta('resume') }}
+                </div>
             </div>
             <div class="savannair__why">
                 <h3 class="savannair__why__title">

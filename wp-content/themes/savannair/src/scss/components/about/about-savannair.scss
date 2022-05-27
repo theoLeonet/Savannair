@@ -1,9 +1,17 @@
-.savannair__title, .savannair__summary {
+.about__savannair__introduction {
   background: $sky-blue;
   color: $white;
+
+  .savannair__image {
+    width: 100%;
+    aspect-ratio: 1920/1080;
+  }
 }
 
 .savannair__title {
+  padding-top: 1em;
+
+  font-size: clamp(24px, 3.33vw, 48px);
   font-family: "PP Monument Extended", sans-serif;
   text-transform: uppercase;
   text-align: center;
@@ -20,60 +28,55 @@
   }
 }
 
-.savannair__summary, .savannair__why__text, .savannair__how__text {
+.savannair__summary, .savannair__how, .savannair__why {
+  width: 80%;
+  padding: 3em 10%;
+
+  font-size: clamp(16px, 1.25vw, 24px);
   font-family: "PP Neue Montreal", sans-serif;
   line-height: 1.5em; // 24/16
 }
 
 .savannair__why__title, .savannair__how__title {
+  padding-bottom: 1.5em;
+
+  font-size: clamp(16px, 3.33vw, 48px);
   font-family: "PP Monument Extended", sans-serif;
   text-transform: uppercase;
 }
 
+.savannair__video iframe {
+  margin-top: 3em; //48/16;
+  margin-bottom: -3px;
+  width: 100vw;
+  height: calc(100vw * (1080 / 1920));
+}
 
-@media screen and (max-width: 600px) {
-  .savannair__image {
-    margin-bottom: -3px;
-  }
+@media screen and (min-width: 600px) {
+  .about__savannair__introduction {
+    display: grid;
+    grid-template:  repeat(3, max-content) / 33vw 67vw;
 
-  .savannair__summary, .savannair__how, .savannair__why {
-    width: 80%;
-    padding: 0 10%;
+    .savannair__image {
+      grid-column: 1/2;
+      grid-row: 1/-1;
+      height: 100%;
+    }
   }
 
   .savannair__title {
-    padding-top: 1em;
-    padding-bottom: 1em;
+    margin-left: 10%;
 
-    font-size: 2rem; // 24/16
-  }
-
-  .savannair__why__title, .savannair__how__title {
-    padding-bottom: 1.5em; // 36/24
-
-    font-size: 1.5em; // 24/16
+    text-align: left;
   }
 
   .savannair__summary {
-    font-size: 1.5rem; //24/16
-    padding-bottom: 3em; // 48/16
+    font-size: calc(clamp(16px, 3.33vw, 40px) * (2 / 3));
   }
+}
 
-  .savannair__how, .savannair__why {
-    margin-top: 4em; //64/16
-  }
-
-  .savannair__how__text, .savannair__why__text {
-    font-size: 1.5rem; // 24/16
-  }
-
-  .savannair__how {
-    margin-bottom: 3em; //48/16
-  }
-
+@media screen and (orientation: landscape) {
   .savannair__video iframe {
-    width: 100vw;
-    height: calc(100vw * (1080 / 1920));
-    margin-bottom: -3px;
+    height: 100vh;
   }
 }
