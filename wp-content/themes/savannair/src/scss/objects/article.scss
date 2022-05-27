@@ -1,7 +1,14 @@
 .home__blog__title {
+  margin-top: 4em;
+  
+  font-size: clamp(16px, 3.33vw, 64px);
   font-family: "PP Monument Extended", sans-serif;
   text-transform: uppercase;
-  margin-top: 4em;
+  text-align: center;
+}
+
+.blog__title {
+  margin-top: 2em;
 
   font-size: clamp(16px, 3.33vw, 64px);
   text-align: center;
@@ -18,11 +25,12 @@
 }
 
 .article + .article {
-  margin-top: 4rem; // 64/16
+  margin-top: 10em;
 }
 
 .article__image {
   order: 0;
+  margin-bottom: 2em;
 }
 
 .article__title {
@@ -36,9 +44,12 @@
   order: 2;
   margin-top: 1.5em; // 24/16
 
-  font-family: "PP Neue Montreal", sans-serif;
-  font-size: clamp(16px, 2.5vw, 48px);
-  line-height: 1.5em;
+  p {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: clamp(16px, 1.25vw, 24px);
+    line-height: 1.5em;
+  }
+
 }
 
 .article__link {
@@ -79,6 +90,7 @@
     .article__image {
       height: 100%;
       object-fit: cover;
+      margin-bottom: 0;
     }
 
     .article__title, .article__excerpt, .article__link {
