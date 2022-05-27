@@ -17,34 +17,37 @@
                 {{ post.content }}
             </div>
         </section>
-        <section class="module__main">
-            <h3 class="module__characteristics__title {{ post.nom_unique }}__characteristics__title">
-                {{ __('Caracteristiques', 'savannair') }}
-            </h3>
-            <div class="wysiwyg module__characteristics__text {{ post.nom_unique }}__characteristics__text">
-                {{ post.meta('characteristics') }}
-            </div>
-            <h3 class="module__measured__title {{ post.nom_unique }}__measured__title">
-                {{ __('Polluants mesurés', 'savannair') }}
-            </h3>
-            <div class="wysiwyg module__measured__text {{ post.nom_unique }}__measured__text">
-                {{ post.meta('measured') }}
-            </div>
-            <h3 class="module__developing__title {{ post.nom_unique }}__developing__title">
-                {{ __('En développement', 'savannair') }}
-            </h3>
-            <div class="wysiwyg module__developing__text {{ post.nom_unique }}__developing__text">
-                {{ post.meta('developing') }}
-            </div>
-        </section>
-        <section class="modules__links">
-            {% for module in modules %}
-                <a href="{{ module.link }}"
-                   class="modules__link {{ module.nom_unique }}__link">
-                    {{ __('Voir','savannair') }} {{ module.title }}
-                </a>
-            {% endfor %}
-        </section>
+        <div class="module__body">
+            <section class="module__main">
+                <h3 class="module__characteristics__title {{ post.nom_unique }}__characteristics__title">
+                    {{ __('Caracteristiques', 'savannair') }}
+                </h3>
+                <div class="wysiwyg module__characteristics__text {{ post.nom_unique }}__characteristics__text">
+                    {{ post.meta('characteristics') }}
+                </div>
+                <h3 class="module__measured__title {{ post.nom_unique }}__measured__title">
+                    {{ __('Polluants mesurés', 'savannair') }}
+                </h3>
+                <div class="wysiwyg module__measured__text {{ post.nom_unique }}__measured__text">
+                    {{ post.meta('measured') }}
+                </div>
+                <h3 class="module__developing__title {{ post.nom_unique }}__developing__title">
+                    {{ __('En développement', 'savannair') }}
+                </h3>
+                <div class="wysiwyg module__developing__text {{ post.nom_unique }}__developing__text">
+                    {{ post.meta('developing') }}
+                </div>
+            </section>
+            <section class="modules__links">
+                {% for module in modules %}
+                    <a href="{{ module.link }}"
+                       class="modules__link {{ module.nom_unique }}__link">
+                        {{ __('Voir','savannair') }} {{ module.title }}
+                    </a>
+                {% endfor %}
+            </section>
+        </div>
     </main>
+
 
 {% endblock %}

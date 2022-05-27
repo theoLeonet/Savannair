@@ -1,52 +1,95 @@
 .module__introduction {
   background: $sky-blue;
   color: $white;
+
+  * {
+    width: 100%;
+    margin: 1em 0;
+  }
+}
+
+.module__body, .module__introduction {
+  width: 80%;
+  padding: 1em 10%;
 }
 
 .module__text, .module__measured__text, .module__developing__text, .module__characteristics__text, .modules__links {
+  margin-bottom: 2em;
+
+  font-size: clamp(16px, 1.25vw, 24px);
   font-family: "PP Neue Montreal", sans-serif;
   line-height: 1.5em;
 }
 
-.module__measured__title, .module__developing__title, .module__characteristics__title {
+.module__introduction .module__title, .module__measured__title, .module__developing__title, .module__characteristics__title {
   font-family: "PP Monument Extended", sans-serif;
+  font-size: clamp(16px, 2.0833333333vw, 40px);
 }
 
+.module__measured__title, .module__developing__title, .module__characteristics__title {
+  margin: 3em 0 1em;
+}
 
-@media screen and (max-width: 600px) {
+.modules__links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 
-  .module__main, .module__text, .modules__links {
-    width: 80%;
-    margin: 0 auto;
+  & .modules__link:after {
+    content: "";
+    display: inline-block;
+    aspect-ratio: 1/1;
+    width: 0.5625em; // 9/16
+    margin-left: 0.5625em; // 9/16
+
+    background: url("https://savannair.test/wp-content/themes/savannair/assets/pictures/arrow.svg") no-repeat center;
+    background-size: contain;
   }
+}
 
-  .module__text {
-    padding: 1.5em 0px 3em;
-  }
+@media screen and (min-width: 800px) {
 
-  .module__introduction {
-    padding-top: 3rem; // 48/16
-  }
-
-  .module__measured__title, .module__developing__title, .module__characteristics__title {
-    font-size: 20px;
-    margin: 4em 0 1em;
+  .module__body {
+    position: relative;
+    display: grid;
+    grid-template-columns: 60% 30%;
+    gap: 10%;
   }
 
   .modules__links {
+    position: sticky;
+    margin-top: 2em;
+    top: 3em;
+    left: 0;
+    height: max-content;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin-top: 4em;
+    grid-template: repeat(5, max-content)/1fr;
 
-    & .modules__link:after {
-      content: "";
-      display: inline-block;
-      aspect-ratio: 1/1;
-      width: 0.5625em; // 9/16
-      margin-left: 0.5625em; // 9/16
+    .modules__link {
+      margin-top: 1em;
+    }
+  }
 
-      background: url("https://savannair.test/wp-content/themes/savannair/assets/pictures/arrow.svg") no-repeat center;
-      background-size: contain;
+  .module__introduction {
+    padding-top: 3em;
+    display: grid;
+    grid-template: repeat(2, max-content)/repeat(2, 1fr);
+    column-gap: 5%;
+    padding-bottom: 3em;
+
+    .module__title {
+      font-size: clamp(16px, 3.33vw, 64px);
+    }
+
+    * {
+      margin-bottom: 0;
+    }
+
+    .module__image {
+      grid-column: 2/-1;
+      grid-row: 1/-1;
+      height: 100%;
+      object-fit: cover;
+      margin: 0;
     }
   }
 }
