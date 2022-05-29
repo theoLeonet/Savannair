@@ -1,4 +1,6 @@
 .module__introduction {
+  margin-top: -64px;
+
   background: $sky-blue;
   color: $white;
 
@@ -10,7 +12,7 @@
 
 .module__body, .module__introduction {
   width: 80%;
-  padding: 1em 10%;
+  padding: 2em 10%;
 }
 
 .module__text, .module__measured__text, .module__developing__text, .module__characteristics__text, .modules__links {
@@ -41,7 +43,7 @@
     width: 0.5625em; // 9/16
     margin-left: 0.5625em; // 9/16
 
-    background: url("https://savannair.test/wp-content/themes/savannair/assets/pictures/arrow.svg") no-repeat center;
+    background: url("https://savannair.be/wp-content/themes/savannair/assets/pictures/arrow.svg") no-repeat center;
     background-size: contain;
   }
 }

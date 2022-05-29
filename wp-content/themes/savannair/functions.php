@@ -130,7 +130,7 @@ register_post_type('article', [
 ]);
 
 //Things to do on form sending
-add_action('admin_post_submit_contact_form', 'savannair_handle_submit_contact_form');
+add_action('admin_post_nopriv_submit_contact_form', 'savannair_handle_submit_contact_form');
 
 function savannair_handle_submit_contact_form()
 {

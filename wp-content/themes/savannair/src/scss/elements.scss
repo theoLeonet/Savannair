@@ -1,13 +1,30 @@
 html {
+  max-height: calc(var(--vh, 1vh) * 100);
+  max-height: -webkit-fill-available;
   scroll-behavior: smooth;
 }
 
 body {
-  width: 100vw;
+  padding: 0;
+  margin: 0;
+  max-height: 100vh;
+  max-height: calc(var(--vh, 1vh) * 100);
+  max-height: -webkit-fill-available;
   overflow-x: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
+  overflow-y: scroll;
+}
+
+/* Avoid Chrome to see Safari hack */
+@supports (-webkit-touch-callout: none) {
+  body {
+    /* The hack for Safari */
+    min-height: -webkit-fill-available;
+  }
+}
+
+.overflow__wrapper {
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 a {

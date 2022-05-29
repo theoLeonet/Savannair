@@ -12,7 +12,7 @@ class ContactFormController extends BaseFormController
 {
     protected function getNonceKey(): string
     {
-        return 'nonce_submit_contact';
+        return 'nonce_submit_contact_form';
     }
 
     protected function getSanitizableAttributes(): array
@@ -47,7 +47,7 @@ class ContactFormController extends BaseFormController
         ];
 
         // On redirige l'utilisateur vers le formulaire pour y afficher le feedback d'erreurs.
-        return wp_safe_redirect(($this->data['_wp_http_referer'] ?? '') . '#contact', 302);
+        return wp_safe_redirect(($this->data['_wp_http_referer'] ?? '') . '#contact__form__container', 302);
     }
 
     protected function handle()
@@ -56,8 +56,15 @@ class ContactFormController extends BaseFormController
         else if ($this->data['user-group'] === 'Une ville') $recipient = 'theoleonet.dev@gmail.com';
         else if ($this->data['user-group'] === 'Un(e) étudiant(e)') $recipient = 'theoleonet.dev@gmail.com';
         else $recipient = 'theoleonet.dev@gmail.com';
+        $headers[] = 'From: <tenoeloeht@gmail.com>';
+
         // Envoyer l'email à l'admin
-        wp_mail($recipient, 'Nouveau message !', $this->data['message']);
+        wp_mail(
+            $recipient,
+            'Vous avez un nouveau message de ' . $this->data['firstname'] . ' ' . $this->data['lastname'],
+            $this->data['message'],
+            $headers
+        );
     }
 
     protected function redirectWithSuccess()
@@ -67,7 +74,6 @@ class ContactFormController extends BaseFormController
             'success' => true,
         ];
 
-        //return wp_safe_redirect($this->data['_wp_http_referer'] . '#contact', 302);
         return wp_safe_redirect($this->data['_wp_http_referer'] . '#contact', 302);
     }
 }

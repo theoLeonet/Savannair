@@ -12,7 +12,7 @@
     width: 1.5em; // 24/16
     aspect-ratio: 1/1;
 
-    background: url("https://savannair.test/wp-content/themes/savannair/assets/pictures/antilope_logo_black.svg") center;
+    background: url("https://savannair.be/wp-content/themes/savannair/assets/pictures/antilope_logo_black.svg") center;
     background-size: cover;
     transform: translateY(.25em); // 4/16
   }
@@ -57,19 +57,20 @@
 }
 
 .link__ingenieurs-hepl {
-  background: url("https://savannair.test/wp-content/themes/savannair/assets/pictures/logo_electronique_systemes_embarques.svg");
+  background: url("https://savannair.be/wp-content/themes/savannair/assets/pictures/logo_electronique_systemes_embarques.svg");
 }
 
 .link__hepl {
-  background: url("https://savannair.test/wp-content/themes/savannair/assets/pictures/logo_hepl_b-w.png");
+  background: url("https://savannair.be/wp-content/themes/savannair/assets/pictures/logo_hepl_b-w.png");
 }
 
 .link__issep {
-  background: url("https://savannair.test/wp-content/themes/savannair/assets/pictures/logo_issep_b-w.png");
+  background: url("https://savannair.be/wp-content/themes/savannair/assets/pictures/logo_issep_b-w.png");
 }
 
 .copyright {
-  margin: 3em 0 7em; // 48/16 112/16
+  padding: 3em 0 15vh; // 48/16 112/16
+  padding: 3em 0 calc(var(--vh, 1vh) * 15);
 
   font-family: "PP Neue Montreal", sans-serif;
   text-align: center;

@@ -5,6 +5,7 @@
   .savannair__image {
     width: 100%;
     aspect-ratio: 1920/1080;
+    margin-top: -64px;
   }
 }
 
@@ -22,7 +23,7 @@
     width: 1.5em; // 24/16
     aspect-ratio: 1/1;
 
-    background: url("https://savannair.test/wp-content/themes/savannair/assets/pictures/antilope_logo_white.svg") center;
+    background: url("https://savannair.be/wp-content/themes/savannair/assets/pictures/antilope_logo_white.svg") center;
     background-size: cover;
     transform: translateY(.25em); // 4/16
   }
@@ -78,5 +79,6 @@
 @media screen and (orientation: landscape) {
   .savannair__video iframe {
     height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
   }
 }
