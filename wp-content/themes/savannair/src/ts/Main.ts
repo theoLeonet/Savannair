@@ -60,4 +60,11 @@ class Main {
     }
 }
 
-window.addEventListener('load', () => new Main());
+window.addEventListener('load', () => {
+    if (location.hash === '#contact__form__container') {
+        document.body.classList.add('js__no-scroll');
+        return;
+    }
+    document.body.classList.remove('js__no-scroll');
+    new Main();
+});
