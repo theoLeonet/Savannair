@@ -15,6 +15,7 @@
 }
 
 .modules__main .module, .modules__secondary .module {
+  position: relative;
   display: grid;
   margin-top: clamp(48px, 13.32vw, 176px);
 
@@ -39,6 +40,15 @@
 
   font-size: clamp(16px, 3.33vw, 64px);
   font-family: "PP Neue Montreal", sans-serif;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 
   &:after {
     content: "";

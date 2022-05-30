@@ -48,6 +48,12 @@
   }
 }
 
+@media screen and (min-width: 700px) {
+  .module__introduction {
+    padding-top: 8rem;
+  }
+}
+
 @media screen and (min-width: 800px) {
 
   .module__body {
@@ -72,7 +78,6 @@
   }
 
   .module__introduction {
-    padding-top: 3em;
     display: grid;
     grid-template: repeat(2, max-content)/repeat(2, 1fr);
     column-gap: 5%;

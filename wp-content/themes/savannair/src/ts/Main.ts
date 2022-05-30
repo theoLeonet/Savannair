@@ -1,13 +1,20 @@
+import {TurningImage} from "./TurningImage";
+
 class Main {
     private vh: number;
     private burgerInput: HTMLInputElement;
     private menuElements: NodeListOf<HTMLLIElement>;
+    private oldScroll: number;
+    private turningImage: TurningImage;
 
     constructor() {
+        this.turningImage = new TurningImage();
+
         this.addJsClass();
         this.vhFixForPhones();
         this.stopScroll();
         this.closeMenu();
+        this.removeContentWrapper();
     }
 
     private addJsClass() {
@@ -58,13 +65,23 @@ class Main {
             })
         })
     }
+
+    private removeContentWrapper() {
+        // @ts-ignore
+        document.querySelector('.overflow__wrapper').replaceWith(...document.querySelector('.overflow__wrapper').childNodes);
+
+        window.addEventListener('scroll', () => {
+            // @ts-ignore
+            window.scrollTo({left: 0, top: scrollY, behavior: 'instant'});
+        })
+    }
 }
 
 window.addEventListener('load', () => {
     if (location.hash === '#contact__form__container') {
         document.body.classList.add('js__no-scroll');
-        return;
+    } else {
+        document.body.classList.remove('js__no-scroll');
     }
-    document.body.classList.remove('js__no-scroll');
     new Main();
 });
