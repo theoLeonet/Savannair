@@ -17,6 +17,8 @@
 .modules__main .module, .modules__secondary .module {
   position: relative;
   display: grid;
+  justify-items: start;
+  align-items: start;
   margin-top: clamp(48px, 13.32vw, 176px);
 
   .module__title {
@@ -79,6 +81,7 @@
 // ----- LARGER PAGES ----- //
 
 @media screen and (min-width: 600px) {
+
   .modules__main {
     width: 80%;
     margin: 0 auto;
@@ -102,6 +105,10 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 5%;
+
+    .module {
+      grid-template-rows: repeat(4, .4fr);
+    }
   }
 
   .module__title, .module__excerpt, .module__link {
@@ -113,5 +120,9 @@
   .modules__secondary {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
+    .module {
+      grid-template-rows: repeat(4, .75fr);
+    }
   }
 }

@@ -81,7 +81,7 @@
 @media screen and (min-width: 600px) {
   .footer__title {
     position: absolute;
-    margin: calc(clamp(16px, 1.25vw, 24px) * 3 - clamp(16px, 3.33vw, 48px)) 0 0 10%;
+    margin: calc(clamp(16px, 1.25vw, 24px) * 3) 0 0 10%;
   }
 
   .footer__main {

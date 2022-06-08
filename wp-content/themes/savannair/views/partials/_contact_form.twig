@@ -1,11 +1,13 @@
 <section class="contact" id="contact">
-    <div class="contact__banner">
-        <h2 class="contact__title">
-            {{ __('Interessé ?', 'savannair') }}
-            <a href="#contact__form__container" class="contact__clickable">
-                {{ __('Contactez-nous !', 'savannair') }}
-            </a>
-        </h2>
+    <div class="contact__banners__container">
+        <div class="contact__banner">
+            <h2 class="contact__title">
+                {{ __('Interessé ?', 'savannair') }}
+                <a href="#contact__form__container" class="contact__clickable">
+                    {{ __('Contactez-nous !', 'savannair') }}
+                </a>
+            </h2>
+        </div>
     </div>
     {% if( session.contact_form_feedback is not defined or not session.contact_form_feedback.success ) %}
         <div id="contact__form__container">
@@ -131,7 +133,10 @@
                 <div class="form__actions">
                     {{ function('wp_nonce_field', 'nonce_submit_contact_form') }}
                     <input type="hidden" name="action" value="submit_contact_form"/>
-                    <button class="form__button" type="submit">Envoyer</button>
+                    <button class="form__button"
+                            type="submit">
+                        Envoyer
+                    </button>
                 </div>
             </form>
         </div>

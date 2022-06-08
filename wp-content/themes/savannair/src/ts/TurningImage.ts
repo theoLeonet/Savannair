@@ -29,7 +29,7 @@ export class TurningImage {
         })
 
         addEventListener('scroll', () => {
-            this.frameRate = Math.floor((scrollY / 50));
+            this.frameRate = Math.floor((scrollY / 75));
 
             this.loadImage(this.frameRate % 8);
         })
@@ -37,8 +37,6 @@ export class TurningImage {
 
     private loadImage(n: number) {
         this.image.src = `https://localhost:3000/wp-content/themes/savannair/assets/pictures/modules/module_${n}.png`;
-        console.log(this.image.src)
-        console.log(n);
         this.image.addEventListener('load', () => {
             this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
             this.context.drawImage(this.image, 0, 0, 333, 333);

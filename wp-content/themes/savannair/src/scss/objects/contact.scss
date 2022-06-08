@@ -1,9 +1,8 @@
 // ----- Banner ----- //
-
 .contact__banner {
   margin-top: 4em;
   padding: 1.5em 0 1.5em 10%;
-  width: 100%;
+  min-width: 100vw;
 
   font-size: clamp(1rem, 1.6666666667vw, 2rem);
 
@@ -178,10 +177,24 @@
   }
 }
 
+.js {
+  .contact__banners__container {
+    position: relative;
+    display: flex;
+    gap: 10vw;
+  }
+}
+
 
 // ----- Big Screens ----- //
 
 @media screen and (min-width: 800px) {
+  .js {
+    .contact__banner {
+      min-width: 50vw;
+    }
+  }
+
   #contact__form__container {
     width: 80%;
   }

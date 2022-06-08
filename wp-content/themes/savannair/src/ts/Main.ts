@@ -1,4 +1,5 @@
 import {TurningImage} from "./TurningImage";
+import {Banner} from "./Banner";
 
 class Main {
     private vh: number;
@@ -6,9 +7,14 @@ class Main {
     private menuElements: NodeListOf<HTMLLIElement>;
     private oldScroll: number;
     private turningImage: TurningImage;
+    private banners: Banner;
 
     constructor() {
-        this.turningImage = new TurningImage();
+
+        if (document.URL === 'https://savannair.test/') {
+            this.turningImage = new TurningImage();
+        }
+        this.banners = new Banner(2);
 
         this.addJsClass();
         this.vhFixForPhones();
@@ -19,7 +25,6 @@ class Main {
 
     private addJsClass() {
         document.documentElement.classList.add('js');
-        console.log(location.hash)
     }
 
     private vhFixForPhones() {

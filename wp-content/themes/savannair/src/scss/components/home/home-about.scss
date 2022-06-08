@@ -93,11 +93,12 @@
 
 // ----- LARGER SCREENS ----- //
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 800px) {
   .about__main {
     display: grid;
     grid-template:  repeat(3, max-content) / 33vw 67vw;
   }
+
 
   .savannair__image {
     grid-column: 1/2;
