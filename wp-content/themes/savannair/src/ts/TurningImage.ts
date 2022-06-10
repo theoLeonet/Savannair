@@ -35,11 +35,13 @@ export class TurningImage {
         })
     }
 
-    private loadImage(n: number) {
-        this.image.src = `https://localhost:3000/wp-content/themes/savannair/assets/pictures/modules/module_${n}.png`;
-        this.image.addEventListener('load', () => {
-            this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-            this.context.drawImage(this.image, 0, 0, 333, 333);
-        })
+    private loadImage(num: number) {
+        if (num >= 0) {
+            this.image.src = 'https://savannair.be/wp-content/themes/savannair/assets/pictures/modules/module_' + num + '.png';
+            this.image.addEventListener('load', () => {
+                this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                this.context.drawImage(this.image, 0, 0, 333, 333);
+            })
+        }
     }
 }

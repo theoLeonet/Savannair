@@ -1,12 +1,14 @@
 <section class="contact" id="contact">
-    <div class="contact__banners__container">
-        <div class="contact__banner">
-            <h2 class="contact__title">
-                {{ __('Interessé ?', 'savannair') }}
-                <a href="#contact__form__container" class="contact__clickable">
-                    {{ __('Contactez-nous !', 'savannair') }}
-                </a>
-            </h2>
+    <div class="contact__banners__container__container">
+        <div class="contact__banners__container">
+            <div class="contact__banner">
+                <h2 class="contact__title">
+                    {{ __('Interessé ?', 'savannair') }}
+                    <a href="#contact__form__container" class="contact__clickable">
+                        {{ __('Contactez-nous !', 'savannair') }}
+                    </a>
+                </h2>
+            </div>
         </div>
     </div>
     {% if( session.contact_form_feedback is not defined or not session.contact_form_feedback.success ) %}

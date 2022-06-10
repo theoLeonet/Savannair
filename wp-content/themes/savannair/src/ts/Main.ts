@@ -11,7 +11,7 @@ class Main {
 
     constructor() {
 
-        if (document.URL === 'https://savannair.test/') {
+        if (document.URL === 'https://savannair.be/' || document.URL.includes('https://savannair.be/#')) {
             this.turningImage = new TurningImage();
         }
         this.banners = new Banner(2);
@@ -65,8 +65,10 @@ class Main {
         this.menuElements = document.querySelectorAll('.header__nav__container li') as NodeListOf<HTMLLIElement>;
         this.menuElements.forEach((item: HTMLLIElement) => {
             item.addEventListener('click', () => {
+                if (item != document.querySelector('.link__contact')) {
+                    document.body.classList.remove('js__no-scroll');
+                }
                 this.burgerInput.checked = false;
-                document.body.classList.remove('js__no-scroll');
             })
         })
     }
@@ -74,19 +76,14 @@ class Main {
     private removeContentWrapper() {
         // @ts-ignore
         document.querySelector('.overflow__wrapper').replaceWith(...document.querySelector('.overflow__wrapper').childNodes);
-
-        window.addEventListener('scroll', () => {
-            // @ts-ignore
-            window.scrollTo({left: 0, top: scrollY, behavior: 'instant'});
-        })
     }
 }
 
 window.addEventListener('load', () => {
     if (location.hash === '#contact__form__container') {
-        document.body.classList.add('js__no-scroll');
+        document.body.classList.add('.js__no-scroll');
     } else {
-        document.body.classList.remove('js__no-scroll');
+        document.body.classList.remove('.js__no-scroll');
     }
     new Main();
 });
