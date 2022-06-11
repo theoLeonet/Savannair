@@ -5,9 +5,9 @@ class Main {
     private vh: number;
     private burgerInput: HTMLInputElement;
     private menuElements: NodeListOf<HTMLLIElement>;
-    private oldScroll: number;
     private turningImage: TurningImage;
     private banners: Banner;
+    private scrollY: number;
 
     constructor() {
 
@@ -40,24 +40,28 @@ class Main {
         this.burgerInput = document.querySelector('.burger-menu__input') as HTMLInputElement;
         this.burgerInput.addEventListener('change', () => {
             if (!this.burgerInput.checked) {
-                document.body.classList.remove('js__no-scroll');
+                document.documentElement.classList.remove('js__no-scroll');
                 return;
             }
             if (innerWidth < 700) {
-                document.body.classList.add('js__no-scroll');
+                document.documentElement.classList.add('js__no-scroll');
             }
         })
         window.addEventListener('resize', () => {
             if (this.burgerInput.checked) {
-                innerWidth < 700 ? document.body.classList.add('js__no-scroll') : document.body.classList.remove('js__no-scroll');
+                innerWidth < 700 ? document.documentElement.classList.add('js__no-scroll') : document.documentElement.classList.remove('js__no-scroll');
             }
         })
-        window.addEventListener('hashchange', () => {
+        window.addEventListener('hashchange', (e: HashChangeEvent) => {
             if (location.hash === '#contact__form__container') {
-                document.body.classList.add('js__no-scroll');
+                document.documentElement.classList.add('js__no-scroll');
+                this.scrollY = scrollY;
                 return;
             }
-            document.body.classList.remove('js__no-scroll');
+
+            window.scrollTo(0, this.scrollY);
+
+            document.documentElement.classList.remove('js__no-scroll');
         })
     }
 
@@ -66,7 +70,7 @@ class Main {
         this.menuElements.forEach((item: HTMLLIElement) => {
             item.addEventListener('click', () => {
                 if (item != document.querySelector('.link__contact')) {
-                    document.body.classList.remove('js__no-scroll');
+                    document.documentElement.classList.remove('js__no-scroll');
                 }
                 this.burgerInput.checked = false;
             })
@@ -81,9 +85,9 @@ class Main {
 
 window.addEventListener('load', () => {
     if (location.hash === '#contact__form__container') {
-        document.body.classList.add('.js__no-scroll');
+        document.documentElement.classList.add('.js__no-scroll');
     } else {
-        document.body.classList.remove('.js__no-scroll');
+        document.documentElement.classList.remove('.js__no-scroll');
     }
     new Main();
 });

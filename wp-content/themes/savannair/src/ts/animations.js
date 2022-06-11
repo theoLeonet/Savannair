@@ -1,5 +1,3 @@
-import 'https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js';
-
 addEventListener('load', () => {
     const contactBannersContainer = document.querySelector('.contact__banners__container');
 
@@ -19,7 +17,7 @@ addEventListener('load', () => {
     function contactBannersAnimations() {
         let contactBannersScrollTimeline = new ScrollTimeline({
             scrollOffsets: [
-                new CSSUnitValue(document.querySelector('#contact').offsetTop - innerHeight, 'px'),
+                new CSSUnitValue(document.body.offsetHeight - document.querySelector('.footer__main').offsetHeight - innerHeight - 400, 'px'),
                 new CSSUnitValue(100, 'percent'),
             ]
         })
@@ -27,10 +25,17 @@ addEventListener('load', () => {
         if (innerWidth > 800) {
             contactBannersContainer.animate(
                 {
+                    position: [
+                        'fixed'
+                    ],
                     left: [
-                        "-10",
-                        "-60vw",
+                        "100vw",
+                        "0vw",
                         "-100vw",
+                    ],
+                    top: [
+                        innerHeight - contactBannersContainer.offsetHeight + 400 + "px",
+                        innerHeight - document.querySelector('.footer__main').offsetHeight - contactBannersContainer.offsetHeight + "px",
                     ]
                 },
                 {
@@ -42,10 +47,19 @@ addEventListener('load', () => {
         } else {
             contactBannersContainer.animate(
                 {
+                    position: [
+                        'relative',
+                    ],
                     left: [
-                        "0",
-                        "0",
-                    ]
+                        '-20vw',
+                        '-20vw',
+                        '-20vw',
+                    ],
+                    top: [
+                        '0',
+                        '0',
+                    ],
+
                 },
                 {
                     easing: 'linear',

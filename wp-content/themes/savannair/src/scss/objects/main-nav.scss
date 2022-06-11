@@ -31,9 +31,9 @@
 
   text-align: center;
 
-  background: $nav;
-  backdrop-filter: blur(1.25rem);
   transition: 300ms;
+  background: $nav;
+  backdrop-filter: blur(1em);
 
   .nav__item + .nav__item {
     margin-top: 7vh;
@@ -72,6 +72,8 @@
     height: 0;
     width: 0;
     margin: 0;
+    background: none;
+    backdrop-filter: none;
   }
 
   .header__nav, .burger-menu__input:checked + #burger-menu__label .header__nav {
