@@ -16,7 +16,7 @@
 
 .modules__secondary {
   .module {
-    grid-template-rows: calc(100% / 2.5) 4vw max-content 4vw;
+    grid-template-rows: 1fr 4vw max-content 4vw;
     gap: 1em;
   }
 }
@@ -110,7 +110,7 @@
     column-gap: 5%;
 
     .module {
-      grid-template-rows: calc(100% / 2.5) 4vw 8vw 4vw;
+      grid-template-rows: 1fr 4vw 8vw 4vw;
     }
   }
 
