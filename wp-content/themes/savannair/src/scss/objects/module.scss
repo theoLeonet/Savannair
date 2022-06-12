@@ -14,6 +14,13 @@
   margin: 0 auto;
 }
 
+.modules__secondary {
+  .module {
+    grid-template-rows: calc(100% / 2.5) 4vw 12vw 4vw;
+    gap: 1em;
+  }
+}
+
 .modules__main .module, .modules__secondary .module {
   position: relative;
   display: grid;
@@ -23,22 +30,16 @@
 
   .module__title {
     order: 1;
-    margin-top: 1em;
 
     font-family: "PP Monument Extended", sans-serif;
     text-transform: uppercase;
 
     font-size: clamp(16px, 3.33vw, 64px);
   }
-
-  * {
-    width: 100%;
-  }
 }
 
 .module__link {
   order: 3;
-  margin-top: 1em;
 
   font-size: clamp(16px, 3.33vw, 64px);
   font-family: "PP Neue Montreal", sans-serif;
@@ -65,12 +66,14 @@
 }
 
 .module__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   order: 0;
 }
 
 .module__excerpt {
   order: 2;
-  margin-top: 1em; // 24/16
 
   font-family: "PP Neue Montreal", sans-serif;
   font-size: clamp(16px, 3.33vw, 64px);
@@ -105,10 +108,6 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 5%;
-
-    .module {
-      grid-template-rows: repeat(4, .4fr);
-    }
   }
 
   .module__title, .module__excerpt, .module__link {
@@ -120,9 +119,5 @@
   .modules__secondary {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-
-    .module {
-      grid-template-rows: repeat(4, .75fr);
-    }
   }
 }
