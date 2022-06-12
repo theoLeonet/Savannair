@@ -137,6 +137,28 @@ function savannair_handle_submit_contact_form()
     $form = new ContactFormController($_POST);
 }
 
+function savannair_get_contact_field_value($field)
+{
+    if (!isset($_SESSION['contact_form_feedback'])) {
+        return '';
+    }
+
+    return $_SESSION['contact_form_feedback']['data'][$field] ?? '';
+}
+
+function savannair_get_contact_field_error($field)
+{
+    if (!isset($_SESSION['contact_form_feedback'])) {
+        return '';
+    }
+
+    if (!($_SESSION['contact_form_feedback']['errors'][$field] ?? null)) {
+        return '';
+    }
+
+    return '<p class="contact__form__error">' . $_SESSION['contact_form_feedback']['errors'][$field] . '</p>';
+}
+
 //Create srcset
 function savannair_create_srcset($array)
 {

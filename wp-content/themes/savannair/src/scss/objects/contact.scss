@@ -203,6 +203,58 @@
   }
 }
 
+.contact__form__error {
+  grid-column: 1/-1;
+
+  font-family: "PP Neue Montreal", 'sans-serif';
+
+  color: red;
+}
+
+.contact__form__success {
+  position: fixed;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  top: 100px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+
+  max-width: 320px;
+  min-height: 100px;
+
+  font-family: "PP Neue Montreal", 'sans-serif';
+
+  color: $white;
+  background: $black;
+  border-radius: 10px;
+  border: 3px solid white;
+
+  animation-name: form-success;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes form-success {
+  0%, 80% {
+    opacity: 1;
+  }
+  98% {
+    position: fixed;
+    opacity: 0;
+    top: 100px;
+  }
+  100% {
+    opacity: 0;
+    position: absolute;
+    top: -100vh;
+  }
+}
+
 
 // ----- Big Screens ----- //
 

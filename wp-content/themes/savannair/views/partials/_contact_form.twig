@@ -11,141 +11,145 @@
             </div>
         </div>
     </div>
-    {% if( session.contact_form_feedback is not defined or not session.contact_form_feedback.success ) %}
-        <div id="contact__form__container">
-            <h3 class="contact__form__title">
-                {{ __('Contact', 'savannair') }}
-                <a href="#" class="close__form">
-                    X
-                </a>
-            </h3>
-            <form action="{{ function('admin_url', 'admin-post.php') | e('esc_url') }}"
-                  method="post"
-                  class="contact__form form">
-                <div class="user__group">
-                    <p>{{ __('Vous êtes', 'savannair') }} </p>
-                    <div class="form__fields">
-                        <div class="form__field">
-                            <input type="radio"
-                                   name="user-group"
-                                   value="Un(e) scientifique"
-                                   id="scientist"
-                                   checked>
-                            <label for="scientist"
-                                   class="form__label">
-                                {{ __('Un(e) scientifique', 'savannair') }}
-                            </label>
-                        </div>
-                        <div class="form__field">
+    <div id="contact__form__container">
+        <h3 class="contact__form__title">
+            {{ __('Contact', 'savannair') }}
+            <a href="#" class="close__form">
+                X
+            </a>
+        </h3>
+        <form action="{{ function('admin_url', 'admin-post.php') | e('esc_url') }}"
+              method="post"
+              class="contact__form form">
+            <div class="user__group">
+                <p>{{ __('Vous êtes', 'savannair') }} </p>
+                <div class="form__fields">
+                    <div class="form__field">
+                        <input type="radio"
+                               name="user-group"
+                               value="Un(e) scientifique"
+                               id="scientist"
+                               checked>
+                        <label for="scientist"
+                               class="form__label">
+                            {{ __('Un(e) scientifique', 'savannair') }}
+                        </label>
+                    </div>
+                    <div class="form__field">
 
-                            <input type="radio"
-                                   name="user-group"
-                                   value="Une ville"
-                                   id="city">
-                            <label for="city"
-                                   class="form__label">
-                                {{ __('Une ville', 'savannair') }}
-                            </label>
-                        </div>
-                        <div class="form__field">
+                        <input type="radio"
+                               name="user-group"
+                               value="Une ville"
+                               id="city">
+                        <label for="city"
+                               class="form__label">
+                            {{ __('Une ville', 'savannair') }}
+                        </label>
+                    </div>
+                    <div class="form__field">
 
-                            <input type="radio"
-                                   name="user-group"
-                                   value="Un(e) étudiant(e)"
-                                   id="student">
-                            <label for="student"
-                                   class="form__label">
-                                {{ __('Un(e) étudiant(e)', 'savannair') }}
-                            </label>
-                        </div>
-                        <div class="form__field">
+                        <input type="radio"
+                               name="user-group"
+                               value="Un(e) étudiant(e)"
+                               id="student">
+                        <label for="student"
+                               class="form__label">
+                            {{ __('Un(e) étudiant(e)', 'savannair') }}
+                        </label>
+                    </div>
+                    <div class="form__field">
 
-                            <input type="radio"
-                                   name="user-group"
-                                   value="Autre chose"
-                                   id="other">
-                            <label for="other"
-                                   class="form__label">
-                                {{ __('Autre chose', 'savannair') }}
-                            </label>
-                        </div>
+                        <input type="radio"
+                               name="user-group"
+                               value="Autre chose"
+                               id="other">
+                        <label for="other"
+                               class="form__label">
+                            {{ __('Autre chose', 'savannair') }}
+                        </label>
                     </div>
                 </div>
-                <div class="form__field">
-                    <label for="firstname" class="form__label">
-                        {{ __('Votre prénom', 'savannair') }}
-                    </label>
-                    <input type="text"
-                           name="firstname"
-                           class="form__input"
-                           id="firstname"
-                           placeholder="Ex: John"
-                           value="{{ session.contact_form_feedback.data.firstname }}">
-                </div>
-                <div class="form__field">
-                    <label for="lastname" class="form__label">
-                        {{ __('Votre nom', 'savannair') }}
-                    </label>
-                    <input type="text"
-                           name="lastname"
-                           class="form__input"
-                           id="lastname"
-                           placeholder="Ex: Doe"
-                           value="{{ session.contact_form_feedback.data.lastname }}">
-                </div>
-                <div class="form__field">
-                    <label for="email" class="form__label">
-                        {{ __('Votre e-mail', 'savannair') }}
-                    </label>
-                    <input type="email"
-                           name="email"
-                           class="form__input"
-                           id="email"
-                           placeholder="Ex: johndoe1@mail.com"
-                           value="{{ session.contact_form_feedback.data.email }}">
-                </div>
-                <div class="form__field form__message__field">
-                    <label for="message" class="form__label">
-                        {{ __('Votre message', 'savannair') }}
-                    </label>
-                    <textarea name="message"
-                              cols="30"
-                              rows="10"
-                              class="form__input form__message"
-                              id="message"
-                              placeholder="Ex: Madame, Monsieur, ..."
-                              value="{{ session.contact_form_feedback.data.message }}"
-                    ></textarea>
-                </div>
-                <div class="form__field form__rules__field">
-                    <label for="rules"
-                           class="form__checkbox">
-                        <input type="checkbox"
-                               name="rules"
-                               id="rules"
-                               value="1"/>
-                        <span class="form__checkable">
+            </div>
+            <div class="form__field">
+                <label for="firstname" class="form__label">
+                    {{ __('Votre prénom*', 'savannair') }}
+                </label>
+                <input type="text"
+                       name="firstname"
+                       class="form__input"
+                       id="firstname"
+                       placeholder="Ex: John"
+                       value="{{ function('savannair_get_contact_field_value', 'firstname') }}">
+                {{ function('savannair_get_contact_field_error', 'firstname') }}
+            </div>
+            <div class="form__field">
+                <label for="lastname" class="form__label">
+                    {{ __('Votre nom', 'savannair') }}
+                </label>
+                <input type="text"
+                       name="lastname"
+                       class="form__input"
+                       id="lastname"
+                       placeholder="Ex: Doe"
+                       value="{{ function('savannair_get_contact_field_value', 'lastname') }}">
+                {{ function('savannair_get_contact_field_error', 'lastname') }}
+            </div>
+            <div class="form__field">
+                <label for="email" class="form__label">
+                    {{ __('Votre e-mail', 'savannair') }}
+                </label>
+                <input type="email"
+                       name="email"
+                       class="form__input"
+                       id="email"
+                       placeholder="Ex: johndoe1@mail.com"
+                       value="{{ function('savannair_get_contact_field_value', 'email') }}">
+                {{ function('savannair_get_contact_field_error', 'email') }}
+            </div>
+            <div class="form__field form__message__field">
+                <label for="message" class="form__label">
+                    {{ __('Votre message', 'savannair') }}
+                </label>
+                <textarea name="message"
+                          cols="30"
+                          rows="10"
+                          class="form__input form__message"
+                          id="message"
+                          placeholder="Ex: Madame, Monsieur, ..."
+                          value="{{ function('savannair_get_contact_field_value', 'message') }}">{{ function('savannair_get_contact_field_value', 'message') }}</textarea>
+                {{ function('savannair_get_contact_field_error', 'message') }}
+            </div>
+            <div class="form__field form__rules__field">
+                <label for="rules"
+                       class="form__checkbox">
+                    <input type="checkbox"
+                           name="rules"
+                           id="rules"
+                           value="1"/>
+                    <span class="form__checkable">
                             {{ __('J’accepte les', 'savannair') }}
                             <a href="#">
                                 {{ __('conditions générales d’utilisation', 'savannair') }}
                             </a>.
                         </span>
-                    </label>
-                </div>
-                <div class="form__actions">
-                    {{ function('wp_nonce_field', 'nonce_submit_contact_form') }}
-                    <input type="hidden" name="action" value="submit_contact_form"/>
-                    <button class="form__button"
-                            type="submit">
-                        Envoyer
-                    </button>
-                </div>
-            </form>
-        </div>
-        <div class="contact__background">
-            <a href="#"></a>
-        </div>
-    {% else %}
+                </label>
+                {{ function('savannair_get_contact_field_error', 'rules') }}
+
+            </div>
+            <div class="form__actions">
+                {{ function('wp_nonce_field', 'nonce_submit_contact_form') }}
+                <input type="hidden" name="action" value="submit_contact_form"/>
+                <button class="form__button"
+                        type="submit">
+                    Envoyer
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="contact__background">
+        <a href="#"></a>
+    </div>
+    {% if(session.contact_form_feedback.success) %}
         <div class="contact__form__success">
             <p id="contact"> {{ __('Merci ! Votre message a bien été envoyé.', 'savannair') }} </p>
         </div>
